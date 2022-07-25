@@ -6,6 +6,8 @@
         <c-input v-model="inputText" />
         <c-input v-model="inputText" pType="textarea" />
         <div>{{ this.inputText }}</div>
+
+        <c-dropdown :dropdownList="dropdownList"></c-dropdown>
     </div>
 </template>
 
@@ -16,6 +18,7 @@ export default {
     data() {
         return {
             inputText: '',
+            dropdownList: ['dropdown test','korea','USA'],
         }
     },
     methods: {

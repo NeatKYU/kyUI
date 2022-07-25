@@ -7,3 +7,10 @@ $c-hover-border-color: gray;
 // background-color
 $c-primary-color: rgb(139, 64, 139);
 $c-primary-hover-color: rgb(136, 51, 136);
+
+// common hover color
+$c-common-hover-color: lightgray;
+
+* {
+    box-sizing: border-box;
+}
