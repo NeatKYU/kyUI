@@ -1,0 +1,31 @@
+@import '../common';
+
+.c-button {
+    width: auto;
+    height: 40px;
+    
+    font-size: 16px;
+    padding: 2px 16px;
+
+    background-color: #fff;
+    
+    border-radius: 10px;
+    border: 1px solid $c-default-border-color;
+
+    &:hover {
+        border-color: $c-hover-border-color
+    }
+
+    cursor: pointer;
+
+    &.is-primary {
+        background-color: $c-primary-color;
+        color: #fff;
+
+        border: none;
+
+        &:hover {
+            background-color: $c-primary-hover-color
+        }
+    }
+}
