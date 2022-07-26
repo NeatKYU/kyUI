@@ -11,6 +11,16 @@ $c-primary-hover-color: rgb(136, 51, 136);
 // common hover color
 $c-common-hover-color: lightgray;
 
+// 투명도 들어간 hover
+$c-common-trans-hover-color: rgba(0,0,0,0.4);
+
 * {
     box-sizing: border-box;
+}
+
+.flex {
+    display: flex;
+}
+.relative {
+    position: relative;
 }
