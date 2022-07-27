@@ -1,5 +1,5 @@
 <template v-if="pImageList.length > 0">
-    <div class="relative">
+    <div class="relative" @mouseenter="pauseSlide" @mouseleave="startSlide">
         <transition-group name="fade" tag="div">
             <!-- <div v-for="i in [currentIndex]" :key="i"> -->
             <div key="carousel-image" class="flex">
@@ -35,6 +35,9 @@ export default {
     methods: {
         startSlide: function() {
             this.timer = setInterval(this.next, 4000);
+        },
+        pauseSlide() {
+            clearInterval(this.timer);
         },
         next: function() {
             this.currentIndex += 1;
