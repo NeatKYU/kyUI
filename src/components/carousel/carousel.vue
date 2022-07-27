@@ -1,9 +1,12 @@
-<template v-if="pImageList.length > 0">
+<template v-if="pList.length > 0">
     <div class="relative" @mouseenter="pauseSlide" @mouseleave="startSlide">
         <transition-group name="fade" tag="div">
             <!-- <div v-for="i in [currentIndex]" :key="i"> -->
             <div key="carousel-image" class="flex">
-                <img :src="currentImg" />
+                <img v-if="pListType === 'img'" :src="currentImg" />
+                <div v-else class="contents">
+                    {{ currentImg }}
+                </div>
             </div>
             <!-- </div> -->
         </transition-group>
@@ -17,7 +20,7 @@
         </div>
         <div v-if="pIsIndicator" class="c-carousel-indicator">
             <div 
-                v-for="(item,index) in pImageList" 
+                v-for="(item,index) in pList" 
                 :key="item"
                 @click="moveSlide(index)"
                 class="c-carousel-indicator__nav"
@@ -31,7 +34,7 @@ export default {
     name: 'c-carousel',
     inheritAttrs: false,
     props: {
-        pImageList: [],
+        pList: [],
         pIsIndicator: {
             type: Boolean,
             default: false,
@@ -39,6 +42,11 @@ export default {
         pIsArrow: {
             type: Boolean,
             default: true,
+        },
+        pListType: {
+            type: String,
+            default: "string",
+            required: true,
         }
     },
     data() {
@@ -58,6 +66,8 @@ export default {
             // setInterval을 날려버려서 멈춤 기능
             clearInterval(this.timer);
         },
+        // currentImg함수에서 발동하는 currentIndex의 값을 
+        // 변경시켜서 이미지를 변경함
         moveSlide(moveIndex) {
             this.currentIndex = moveIndex
         },
@@ -69,8 +79,8 @@ export default {
         }
     },
     computed: {
-        currentImg    () {
-            return this.pImageList[Math.abs(this.currentIndex) % this.pImageList.length];
+        currentImg() {
+            return this.pList[Math.abs(this.currentIndex) % this.pList.length];
             // return this.imageList[Math.abs(this.currentIndex) % this.imageList.length];
         }
     },
