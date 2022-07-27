@@ -7,12 +7,22 @@
             </div>
             <!-- </div> -->
         </transition-group>
-        <a class="prev" @click="prev" href="#">
-            <c-icon icon="angle-left" />
-        </a>
-        <a class="next" @click="next" href="#">
-            <c-icon icon="angle-right"/>
-        </a>
+        <div v-if="pIsArrow">
+            <a class="prev" @click="prev" href="#">
+                <c-icon icon="angle-left" />
+            </a>
+            <a class="next" @click="next" href="#">
+                <c-icon icon="angle-right"/>
+            </a>
+        </div>
+        <div v-if="pIsIndicator" class="c-carousel-indicator">
+            <div 
+                v-for="(item,index) in pImageList" 
+                :key="item"
+                @click="moveSlide(index)"
+                class="c-carousel-indicator__nav"
+            />
+        </div>
     </div>
 </template>
 
@@ -21,7 +31,15 @@ export default {
     name: 'c-carousel',
     inheritAttrs: false,
     props: {
-        pImageList: [],  
+        pImageList: [],
+        pIsIndicator: {
+            type: Boolean,
+            default: false,
+        },
+        pIsArrow: {
+            type: Boolean,
+            default: true,
+        }
     },
     data() {
         return {
@@ -29,25 +47,29 @@ export default {
             currentIndex: 0,
         }
     },
-    mounted: function() {
+    mounted() {
         this.startSlide();
     },
     methods: {
-        startSlide: function() {
+        startSlide() {
             this.timer = setInterval(this.next, 4000);
         },
         pauseSlide() {
+            // setInterval을 날려버려서 멈춤 기능
             clearInterval(this.timer);
         },
-        next: function() {
+        moveSlide(moveIndex) {
+            this.currentIndex = moveIndex
+        },
+        next() {
             this.currentIndex += 1;
         },
-        prev: function() {
+        prev() {
             this.currentIndex -= 1;
         }
     },
     computed: {
-        currentImg: function() {
+        currentImg    () {
             return this.pImageList[Math.abs(this.currentIndex) % this.pImageList.length];
             // return this.imageList[Math.abs(this.currentIndex) % this.imageList.length];
         }

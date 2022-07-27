@@ -9,7 +9,7 @@
 
         <c-dropdown :dropdownList="dropdownList"></c-dropdown>
 
-        <c-carousel :pImageList="this.imageList"></c-carousel>
+        <c-carousel :pImageList="this.imageList" pIsArrow></c-carousel>
     </div>
 </template>
 
