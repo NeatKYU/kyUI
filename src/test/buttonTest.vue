@@ -9,7 +9,14 @@
 
         <c-dropdown :dropdownList="dropdownList"></c-dropdown>
 
-        <c-carousel :pImageList="this.imageList" pIsArrow></c-carousel>
+        <c-carousel 
+            :pList="this.imageList" 
+            pListType="img" 
+            :pIsArrow="false" 
+            pIsIndicator
+        />
+
+        <c-radio>kdkd</c-radio>
     </div>
 </template>
 
@@ -26,6 +33,12 @@ export default {
                 'https://cdn.pixabay.com/photo/2019/09/24/06/57/antarctica-4500447_960_720.jpg',
                 'https://cdn.pixabay.com/photo/2022/04/28/04/07/snake-7161713_960_720.jpg'
             ],
+            justList: [
+                'slide1',
+                'slide2',
+                'slide3',
+                'slide4'
+            ]
         }
     },
     methods: {

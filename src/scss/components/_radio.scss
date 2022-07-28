@@ -1,0 +1,25 @@
+.c-radio-label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.c-radio-input {
+    width: 20px;
+    height: 20px;
+    
+    margin-top: 0;
+    
+    border: 1px solid red;
+}
+
+input[type="radio"]:checked+label {
+    background-color: antiquewhite;
+}
+
+.c-radio-span {
+
+
+
+}
