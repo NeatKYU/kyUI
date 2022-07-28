@@ -1,22 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-
-import { CButton } from './components/button/index'
-import { CIcon } from './components/icon/index'
-import { CInput } from './components/input/index'
-import { CDropdown, CDropdownItem } from './components/dropdown/index'
-import { CCarousel } from './components/carousel/index'
-
-Vue.component(CButton.name, CButton)
-Vue.component(CIcon.name, CIcon)
-Vue.component(CInput.name, CInput)
-Vue.component(CDropdown.name, CDropdown)
-Vue.component(CDropdownItem.name, CDropdownItem)
-Vue.component(CCarousel.name, CCarousel)
-
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-
-Vue.component('f-icon', FontAwesomeIcon)
+import './plugins/GlobalComponent'
+import './plugins/GlobalFont'
 
 Vue.config.productionTip = false
 
