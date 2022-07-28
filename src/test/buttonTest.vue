@@ -16,10 +16,12 @@
             pIsIndicator
         /> -->
         <div>
-            <c-radio v-model="inputValue" label="test1">test1</c-radio>
+            <c-radio v-model="inputValue" label="test1" buttonMode>test1</c-radio>
             <c-radio v-model="inputValue" label="test2">test2</c-radio>
+            <c-radio v-model="inputValue" label="test3" buttonMode>test3</c-radio>
+            <!-- <c-radio v-model="inputValue" label="test2">test2</c-radio>
             <c-radio v-model="inputValue" label="test3">test1</c-radio>
-            <c-radio v-model="inputValue" label="test4">test1</c-radio>
+            <c-radio v-model="inputValue" label="test4">test1</c-radio> -->
             <div>{{ this.inputValue }}</div>
         </div>
     </div>

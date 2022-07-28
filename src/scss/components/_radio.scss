@@ -3,6 +3,65 @@
     justify-content: center;
     align-items: center;
 
+    cursor: pointer;
+    
+    position: relative;
+
+    input[type='radio'],
+    input[type='radio']:checked {
+        width: 20px;
+        height: 20px;
+        margin: 3px 5px;
+        border-radius: 100%;
+        border: 2px solid black;
+        
+        position: relative;
+
+        cursor: pointer;
+        
+        &:hover {
+            border-color: $c-primary-hover-color
+        }
+    
+        &:focus {
+            box-shadow: $c-strong-box-shadow;
+            border-color: $c-primary-hover-color;
+        }
+        
+        &:after  {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $c-primary-color;
+            border-radius: 100%;
+            width: 0;
+            height: 0;
+            transition: width .2s, height .2s;
+        }
+    
+        &.button {
+            position: absolute;
+            left: 0;
+            opacity: 0;
+        }
+    }
+
+    input[type='radio']:checked {
+        border-color: $c-primary-hover-color;
+        &::after {
+            width: 60%;
+            height: 60%;
+        }
+    }
+
+    .inner-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
 }
 
 .c-radio-input {
@@ -10,45 +69,19 @@
     appearance: none;
 }
 
-input[type='radio'],
-input[type='radio']:checked {
-    width: 20px;
-    height: 20px;
-    margin: 3px 5px;
-    border-radius: 100%;
-    border: 2px solid black;
-    
-    position: relative;
-    
-    cursor: pointer;
-    
-    &:hover {
-        border-color: $c-primary-hover-color
-    }
+.c-radio-span {
+    &.button-mode {
+        width: 100px;
+        height: 30px;
 
-    &:focus {
-        box-shadow: $c-strong-box-shadow;
-        border-color: $c-primary-hover-color;
-    }
-    
-    &:after  {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: $c-primary-color;
-        border-radius: 100%;
-        width: 0;
-        height: 0;
-        transition: width .2s, height .2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid $c-default-border-color;
     }
 }
 
-input[type='radio']:checked {
-    border-color: $c-primary-hover-color;
-    &::after {
-        width: 60%;
-        height: 60%;
-    }
+.is-selected {
+    background-color: red;
 }
