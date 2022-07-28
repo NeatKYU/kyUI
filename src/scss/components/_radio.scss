@@ -6,16 +6,45 @@
 }
 
 .c-radio-input {
-    width: 20px;
-    height: 20px;
-    
-    margin-top: 0;
-    
-    border: 1px solid red;
+    // input효과 지우고 새로운걸 다시 넣는다.
+    appearance: none;
 }
 
-input[type="radio"]:checked+label {
-    background-color: antiquewhite;
+input[type='radio'],
+input[type='radio']:checked {
+    width: 20px;
+    height: 20px;
+    margin: 0 5px;
+    border-radius: 100%;
+    border: 2px solid black;
+    
+    position: relative;
+    
+    cursor: pointer;
+    
+    &:hover {
+        border-color: $c-primary-hover-color
+    }
+    
+    &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-47%, -47%);
+        width: 70%;
+        height: 70%;
+        background-color: $c-primary-color;
+        border-radius: 100%;
+        display: none;
+    }
+}
+
+input[type='radio']:checked {
+    &::after {
+        display: inline-block;
+        box-shadow: $c-strong-box-shadow;
+    }
 }
 
 .c-radio-span {
