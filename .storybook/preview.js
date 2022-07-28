@@ -8,8 +8,6 @@ export const parameters = {
   },
 }
 
-import Vue from 'vue';
-import { CButton } from '../src/components/button/index';
+import '../src/plugins/GlobalComponent';
+import '../src/plugins/GlobalFont';
 import '../src/scss/_main.scss';
-
-Vue.component(CButton.name, CButton);
