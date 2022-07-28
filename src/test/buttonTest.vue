@@ -9,14 +9,19 @@
 
         <c-dropdown :dropdownList="dropdownList"></c-dropdown>
 
-        <c-carousel 
+        <!-- <c-carousel 
             :pList="this.imageList" 
             pListType="img" 
             :pIsArrow="false" 
             pIsIndicator
-        />
-
-        <c-radio>kdkd</c-radio>
+        /> -->
+        <div>
+            <c-radio v-model="inputValue" label="test1">test1</c-radio>
+            <c-radio v-model="inputValue" label="test2">test2</c-radio>
+            <c-radio v-model="inputValue" label="test3">test1</c-radio>
+            <c-radio v-model="inputValue" label="test4">test1</c-radio>
+            <div>{{ this.inputValue }}</div>
+        </div>
     </div>
 </template>
 
@@ -38,7 +43,8 @@ export default {
                 'slide2',
                 'slide3',
                 'slide4'
-            ]
+            ],
+            inputValue: '',
         }
     },
     methods: {
