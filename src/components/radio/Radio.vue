@@ -36,11 +36,6 @@ export default {
             default: false,
         },
     },
-    data() {
-        return {
-            isCheck: false,
-        }
-    },
     computed: {
         isChecked() {
             return this.value === this.label;
@@ -49,7 +44,7 @@ export default {
             return {
                 'is-selected': this.isChecked && this.buttonMode
             }
-        }
+        },
     },
     methods: {
         updateInputValue() {

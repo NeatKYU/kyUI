@@ -38,6 +38,10 @@ export default {
             validator: (value) => {
                 return config.defaultLinkTags.indexOf(value) >= 0
             }
+        },
+        rounded: {
+            type: String,
+            default: null,
         }
     },
     computed: {
@@ -53,6 +57,7 @@ export default {
                 'small': this.size === 'small',
                 'medium': this.size === 'medium',
                 'large': this.size === 'large',
+                'is-rounded': this.rounded,
             }
         }
     }

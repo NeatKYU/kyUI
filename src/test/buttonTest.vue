@@ -1,6 +1,6 @@
 <template>
     <div>
-        <c-button @click="toggle" leftIcon="angle-left">
+        <c-button @click="toggle" leftIcon="angle-left" primary>
             click me
         </c-button>
         <c-input v-model="inputText" />

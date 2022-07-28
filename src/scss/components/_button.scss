@@ -9,7 +9,7 @@
 
     background-color: #fff;
     
-    border-radius: 10px;
+    border-radius: $c-boder-radius;
     border: 1px solid $c-default-border-color;
 
     &:hover {
@@ -28,6 +28,11 @@
             background-color: $c-primary-hover-color
         }
     }
+
+    &.is-rounded {
+        border-radius: $c-rounded-border-radius;
+    }
+
     &.small {
         height: 30px;
     }
