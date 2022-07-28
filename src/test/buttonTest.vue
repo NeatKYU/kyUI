@@ -1,13 +1,22 @@
 <template>
-    <div>
-        <c-button @click="toggle" leftIcon="angle-left" primary>
-            click me
-        </c-button>
-        <c-input v-model="inputText" />
-        <c-input v-model="inputText" pType="textarea" />
-        <div>{{ this.inputText }}</div>
+    <div class="flex-col">
+        <c-label>
+            <h3>Button</h3>
+            <c-button @click="toggle" leftIcon="angle-left" primary>
+                click me
+            </c-button>
+        </c-label>
+        <c-label>
+            <h3>Input</h3>
+            <c-input v-model="inputText" />
+            <c-input v-model="inputText" pType="textarea" />
+            <div>{{ this.inputText }}</div>
+        </c-label>
 
-        <c-dropdown :dropdownList="dropdownList"></c-dropdown>
+        <c-label>
+            <h3>dropdown</h3>
+            <c-dropdown :dropdownList="dropdownList"></c-dropdown>
+        </c-label>
 
         <!-- <c-carousel 
             :pList="this.imageList" 
@@ -15,15 +24,15 @@
             :pIsArrow="false" 
             pIsIndicator
         /> -->
-        <div>
-            <c-radio v-model="inputValue" label="test1" buttonMode>test1</c-radio>
-            <c-radio v-model="inputValue" label="test2">test2</c-radio>
-            <c-radio v-model="inputValue" label="test3" buttonMode>test3</c-radio>
-            <!-- <c-radio v-model="inputValue" label="test2">test2</c-radio>
-            <c-radio v-model="inputValue" label="test3">test1</c-radio>
-            <c-radio v-model="inputValue" label="test4">test1</c-radio> -->
-            <div>{{ this.inputValue }}</div>
-        </div>
+        <c-label>
+            <h3>radio</h3>
+            <div>
+                <c-radio v-model="inputValue" label="test1" buttonMode>test1</c-radio>
+                <c-radio v-model="inputValue" label="test2">test2</c-radio>
+                <c-radio v-model="inputValue" label="test3" buttonMode>test3</c-radio>
+                <div>{{ this.inputValue }}</div>
+            </div>
+        </c-label>
     </div>
 </template>
 

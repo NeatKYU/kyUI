@@ -25,6 +25,10 @@ $c-rounded-border-radius: 20px;
 .flex {
     display: flex;
 }
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
 .relative {
     position: relative;
 }
