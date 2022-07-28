@@ -3,6 +3,12 @@ import { CButton } from './index';
 export default {
   title: 'KYUI/CButton',
   component: CButton,
+  argTypes: {
+    size: {
+      control: { type: 'select' },
+      options: ['small', 'medium', 'large'],
+    },
+  }
 }
 
 const Template = (args, { argTypes }) => ({
@@ -14,5 +20,4 @@ const Template = (args, { argTypes }) => ({
 export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
-  leftIcon: 'angle-left'
 }

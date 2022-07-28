@@ -2,7 +2,7 @@
     <component
         :is="computedTag"
         class="c-button"
-        :class="[ type ]"
+        :class="[ type, classes ]"
         v-on="$listeners"
     >
         <c-icon v-if="leftIcon" :icon="leftIcon" />
@@ -24,6 +24,14 @@ export default {
         label: String,
         leftIcon: String,
         rightIcon: String,
+        primary: {
+            type: Boolean,
+            default: false,
+        },
+        size: {
+            type: String,
+            default: 'medium'
+        },
         tag: {
             type: String,
             default: 'button',
@@ -39,6 +47,14 @@ export default {
             }
             return this.tag
         },
+        classes() {
+            return {
+                'is-primary': this.primary,
+                'small': this.size === 'small',
+                'medium': this.size === 'medium',
+                'large': this.size === 'large',
+            }
+        }
     }
 }
 </script>

@@ -28,4 +28,15 @@
             background-color: $c-primary-hover-color
         }
     }
+    &.small {
+        height: 30px;
+    }
+    
+    &.medium {
+        height: 40px;
+    }
+
+    &.large {
+        height: 50px;
+    }
 }
