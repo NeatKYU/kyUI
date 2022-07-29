@@ -5,7 +5,7 @@
             <c-button @click="toggle" leftIcon="angle-left" primary>
                 click me
             </c-button>
-            <c-button @click="toggle" leftIcon="angle-left" primary disabled>
+            <c-button @click="toggle" leftIcon="angle-left" disabled>
                 click me
             </c-button>
         </c-label>

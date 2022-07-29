@@ -1,6 +1,6 @@
 <template>
     <div class="c-pagination">
-        <c-button @click="prev" leftIcon="angle-left"/>
+        <c-button @click="prev" leftIcon="angle-left" :disabled="cIsStartDisable"/>
         <div class="flex">
             <div 
                 v-for="page in sPageList"
@@ -12,7 +12,7 @@
                 {{ page }}
             </div>
         </div>
-        <c-button @click="next" rightIcon="angle-right"/>
+        <c-button @click="next" rightIcon="angle-right" :disabled="cIsEndDisable"/>
     </div>
 </template>
 
@@ -47,6 +47,14 @@ export default {
             sStartPage: 1,
             sEndPage: this.perPage,
             sPageList: [],
+        }
+    },
+    computed: {
+        cIsEndDisable() {
+            return this.sTotalPage === this.currentPage //next disable
+        },
+        cIsStartDisable() {
+            return this.sCurrentPage === 1
         }
     },
     methods: {

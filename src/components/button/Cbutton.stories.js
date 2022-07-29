@@ -21,4 +21,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   primary: true,
   rounded: false,
+  disabled: false,
 }
