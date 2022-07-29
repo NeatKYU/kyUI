@@ -33,6 +33,16 @@
         border-radius: $c-rounded-border-radius;
     }
 
+    &.is-disabled {
+        color: rgb(165, 164, 164);
+        background-color: lightgray;
+        cursor: not-allowed;
+        
+        &:hover {
+            background-color: lightgray;
+        }
+    }
+
     &.small {
         height: 30px;
     }

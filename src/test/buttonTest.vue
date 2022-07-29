@@ -5,6 +5,9 @@
             <c-button @click="toggle" leftIcon="angle-left" primary>
                 click me
             </c-button>
+            <c-button @click="toggle" leftIcon="angle-left" primary disabled>
+                click me
+            </c-button>
         </c-label>
         <c-label>
             <h3>Input</h3>
@@ -33,8 +36,13 @@
                 <c-radio v-model="inputValue" label="test1">test1</c-radio>
                 <c-radio v-model="inputValue" label="test2">test2</c-radio>
                 <c-radio v-model="inputValue" label="test3">test3</c-radio>
-                <div>{{ this.inputValue }}</div>
             </div>
+            <div>
+                <c-radio v-model="inputValue" label="test4" buttonMode>test4</c-radio>
+                <c-radio v-model="inputValue" label="test5" buttonMode>test5</c-radio>
+                <c-radio v-model="inputValue" label="test6" buttonMode>test6</c-radio>
+            </div>
+            <div>{{ this.inputValue }}</div>
         </c-label>
 
         <c-label>
@@ -50,9 +58,9 @@
             <h3>Pagination</h3>
             <c-pagination 
                 @changePage="changePage" 
-                :totalCount=101 
+                :totalCount=101
                 :perPage=5
-                :currentPage=1 />
+                :currentPage="this.currentPage" />
         </c-label>
     </div>
 </template>

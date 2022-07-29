@@ -42,6 +42,10 @@ export default {
         rounded: {
             type: Boolean,
             default: false,
+        },
+        disabled: {
+            type: Boolean,
+            default: false,
         }
     },
     computed: {
@@ -58,6 +62,7 @@ export default {
                 'medium': this.size === 'medium',
                 'large': this.size === 'large',
                 'is-rounded': this.rounded,
+                'is-disabled': this.disabled,
             }
         }
     }
