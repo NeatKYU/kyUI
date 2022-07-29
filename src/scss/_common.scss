@@ -18,8 +18,11 @@ $c-common-trans-hover-color: rgba(0,0,0,0.4);
 $c-boder-radius: 5px;
 $c-rounded-border-radius: 20px;
 
+@import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
+
 * {
     box-sizing: border-box;
+    font-family: Galmuri9;
 }
 
 .flex {
