@@ -33,6 +33,15 @@
                 <div>{{ this.inputValue }}</div>
             </div>
         </c-label>
+
+        <c-label>
+            <h3>breadcrumb</h3>
+            <c-breadcrumb>
+                <c-breadcrumb-item>one</c-breadcrumb-item>
+                <c-breadcrumb-item>two</c-breadcrumb-item>
+                <c-breadcrumb-item href="/three" active>three</c-breadcrumb-item>
+            </c-breadcrumb>
+        </c-label>
     </div>
 </template>
 

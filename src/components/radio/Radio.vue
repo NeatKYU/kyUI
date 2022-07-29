@@ -29,7 +29,8 @@ export default {
         },
         label: {
             type: String,
-            default: ''
+            default: '',
+            required: true,
         },
         buttonMode: {
             type: Boolean,

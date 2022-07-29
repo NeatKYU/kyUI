@@ -7,6 +7,7 @@ import { CDropdown, CDropdownItem } from '../components/dropdown/index'
 import { CCarousel } from '../components/carousel/index'
 import { CRadio } from '../components/radio/index'
 import { CLabel } from '../components/label/index'
+import { CBreadcrumb, CBreadcrumbItem } from '../components/breadcrumb/index'
 
 Vue.component(CButton.name, CButton)
 Vue.component(CIcon.name, CIcon)
@@ -16,6 +17,8 @@ Vue.component(CDropdownItem.name, CDropdownItem)
 Vue.component(CCarousel.name, CCarousel)
 Vue.component(CRadio.name, CRadio)
 Vue.component(CLabel.name, CLabel)
+Vue.component(CBreadcrumb.name, CBreadcrumb)
+Vue.component(CBreadcrumbItem.name, CBreadcrumbItem)
 
 export {
     CButton,
@@ -26,4 +29,6 @@ export {
     CCarousel,
     CRadio,
     CLabel,
+    CBreadcrumb,
+    CBreadcrumbItem,
 }
