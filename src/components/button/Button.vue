@@ -40,8 +40,8 @@ export default {
             }
         },
         rounded: {
-            type: String,
-            default: null,
+            type: Boolean,
+            default: false,
         }
     },
     computed: {
