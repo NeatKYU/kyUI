@@ -18,18 +18,21 @@
             <c-dropdown :dropdownList="dropdownList"></c-dropdown>
         </c-label>
 
-        <!-- <c-carousel 
-            :pList="this.imageList" 
-            pListType="img" 
-            :pIsArrow="false" 
-            pIsIndicator
-        /> -->
+        <!-- <c-label>
+            <h3>carousel</h3>
+            <c-carousel 
+                :pList="this.imageList" 
+                pListType="img" 
+                :pIsArrow="false" 
+                pIsIndicator
+            />
+        </c-label> -->
         <c-label>
             <h3>radio</h3>
             <div>
-                <c-radio v-model="inputValue" label="test1" buttonMode>test1</c-radio>
+                <c-radio v-model="inputValue" label="test1">test1</c-radio>
                 <c-radio v-model="inputValue" label="test2">test2</c-radio>
-                <c-radio v-model="inputValue" label="test3" buttonMode>test3</c-radio>
+                <c-radio v-model="inputValue" label="test3">test3</c-radio>
                 <div>{{ this.inputValue }}</div>
             </div>
         </c-label>
@@ -41,6 +44,15 @@
                 <c-breadcrumb-item>two</c-breadcrumb-item>
                 <c-breadcrumb-item href="/three" active>three</c-breadcrumb-item>
             </c-breadcrumb>
+        </c-label>
+
+        <c-label>
+            <h3>Pagination</h3>
+            <c-pagination 
+                @changePage="changePage" 
+                :totalCount=101 
+                :perPage=5
+                :currentPage=1 />
         </c-label>
     </div>
 </template>
@@ -65,12 +77,17 @@ export default {
                 'slide4'
             ],
             inputValue: '',
+            currentPage: 1,
         }
     },
     methods: {
         toggle() {
             console.log('toggle!!!')
         },
+        changePage(aPage) {
+            this.currentPage = aPage;
+            console.log('this page = ', this.currentPage)
+        }
     }
 }
 </script>
