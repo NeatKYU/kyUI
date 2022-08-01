@@ -69,6 +69,11 @@
                 <c-button>tooltip</c-button>
             </c-tooltip>
         </c-label>
+
+        <c-label>
+            <h3>Tag</h3>
+            <c-tag pTextValue="primary"></c-tag>
+        </c-label>
     </div>
 </template>
 

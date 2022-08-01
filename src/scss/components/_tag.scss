@@ -1,0 +1,38 @@
+c-tag {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	width: auto;
+
+	border: 1px solid $c-default-border-color;
+
+	&.small {
+		height: 5px;
+	}
+	&.medium {
+		height: 8px;
+	}
+	&.large {
+		height: 10px;
+	}
+
+	&.is-primary {
+		color: $c-primary-color;
+		&:hover {
+			color: $c-primary-hover-color;
+		}
+	}
+
+	&.is-success {
+		color: $c-success-color;
+
+		&:hover {
+			color: $c-success-hover-color;
+		}
+	}
+
+	&.is-rounded {
+		border-radius: $c-rounded-border-radius;
+	}
+}
