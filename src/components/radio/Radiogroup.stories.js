@@ -1,5 +1,4 @@
 import { CRadioGroup } from './index';
-import * as CRadioStories from './Radio.stories'
 
 export default {
   title: 'components/CRadioGroup',
@@ -18,6 +17,8 @@ Primary.args = {
         'radio1',
         'radio2',
         'radio3'
-    ]
+    ],
+    value: '',
+    pIsButton: false,
 }
 
