@@ -1,13 +1,17 @@
 $c-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
 $c-strong-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
+// color
+// primary
+$c-primary-color: #5e737d;
+$c-primary-hover-color: #4a5c64;
+
 // border
 $c-default-border-color: rgb(202, 202, 202);
 $c-hover-border-color: gray;
 
-// background-color
-$c-primary-color: #5e737d;
-$c-primary-hover-color: #4a5c64;
+// white
+$c-white-color: #FFF;
 
 // common hover color
 $c-common-hover-color: lightgray;

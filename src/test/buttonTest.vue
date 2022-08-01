@@ -2,12 +2,14 @@
     <div class="flex-col">
         <c-label>
             <h3>Button</h3>
-            <c-button @click="toggle" leftIcon="angle-left" primary>
-                click me
-            </c-button>
-            <c-button @click="toggle" leftIcon="angle-left" disabled>
-                click me
-            </c-button>
+            <div>
+                <c-button @click="toggle" leftIcon="angle-left" primary>
+                    click me
+                </c-button>
+                <c-button @click="toggle" disabled>
+                    disabled
+                </c-button>
+            </div>
         </c-label>
         <c-label>
             <h3>Input</h3>
@@ -61,6 +63,13 @@
                 :totalCount=101
                 :perPage=5
                 :currentPage="this.currentPage" />
+        </c-label>
+
+        <c-label>
+            <h3>Tooltip</h3>
+            <c-tooltip>
+                <c-button>tooltip</c-button>
+            </c-tooltip>
         </c-label>
     </div>
 </template>

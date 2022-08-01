@@ -1,0 +1,40 @@
+.c-tooltip {
+    position: relative;
+    display: inline-flex;
+
+    .c-tooltip-item {
+        background-color: $c-primary-color;
+
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translate(-50%);
+
+        &.is-left {
+
+        }
+
+        &.is-right {
+
+        }
+
+        &.is-bottom {
+
+        }
+
+        &.is-animation {
+            width: 100px;
+            height: 30px;
+            transition: width .3s;
+        }
+        
+        @keyframes showAni {
+            from {
+
+            }
+            to {
+                
+            }
+        }
+    }
+}

@@ -17,6 +17,8 @@
 
     &.is-active {
         background-color: $c-primary-color;
+        color: $c-white-color;
+        pointer-events: none;
     }
 
     &:hover {

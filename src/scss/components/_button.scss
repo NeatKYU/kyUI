@@ -7,7 +7,7 @@
     font-size: 16px;
     padding: 2px 16px;
 
-    background-color: #fff;
+    background-color: $c-white-color;
     
     border-radius: $c-boder-radius;
     border: 1px solid $c-default-border-color;
@@ -20,7 +20,7 @@
 
     &.is-primary {
         background-color: $c-primary-color;
-        color: #fff;
+        color: $c-white-color;
 
         border: none;
 
