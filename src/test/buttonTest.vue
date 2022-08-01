@@ -35,9 +35,7 @@
         <c-label>
             <h3>radio</h3>
             <div>
-                <c-radio v-model="inputValue" label="test1">test1</c-radio>
-                <c-radio v-model="inputValue" label="test2">test2</c-radio>
-                <c-radio v-model="inputValue" label="test3">test3</c-radio>
+                <c-radio-group :pRadioList="radioList"/>
             </div>
             <div>
                 <c-radio v-model="inputValue" label="test4" buttonMode>test4</c-radio>
@@ -92,6 +90,11 @@ export default {
                 'slide2',
                 'slide3',
                 'slide4'
+            ],
+            radioList: [
+                'radio1',
+                'radio2',
+                'radio3',
             ],
             inputValue: '',
             currentPage: 1,

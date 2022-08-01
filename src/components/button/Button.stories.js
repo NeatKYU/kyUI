@@ -1,7 +1,7 @@
 import { CButton } from './index';
 
 export default {
-  title: 'KYUI/CButton',
+  title: 'components/CButton',
   component: CButton,
   argTypes: {
     size: {

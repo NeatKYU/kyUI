@@ -64,6 +64,7 @@ export default {
             }
         },
         move(aPage) {
+            console.log('page move!')
             this.sCurrentPage = aPage;
             this.updatePage(aPage);
         },
@@ -74,6 +75,7 @@ export default {
             }
         },
         next() {
+            console.log('next!')
             if(this.sTotalPage > this.sCurrentPage) {
                 this.sCurrentPage += 1;
                 this.updatePage(this.sCurrentPage);
@@ -86,6 +88,7 @@ export default {
             }
         },
         prev() {
+            console.log('prev!')
             if(this.sCurrentPage > 1){
                 this.sCurrentPage -= 1;
                 this.updatePage(this.sCurrentPage);

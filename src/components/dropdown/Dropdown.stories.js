@@ -1,7 +1,7 @@
 import { CDropdown } from './index';
 
 export default {
-  title: 'KYUI/CDropdown',
+  title: 'components/CDropdown',
   component: CDropdown,
 }
 

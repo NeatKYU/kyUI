@@ -12,8 +12,9 @@
 
         <textarea
             v-else
-            class="c-textarea"
             @input="updateInputValue"
+            :placeholder="pPlaceholder"
+            class="c-textarea"
         ></textarea>
     </div>
 </template>

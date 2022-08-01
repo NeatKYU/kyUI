@@ -5,7 +5,7 @@ import { CIcon } from '../components/icon/index'
 import { CInput } from '../components/input/index'
 import { CDropdown, CDropdownItem } from '../components/dropdown/index'
 import { CCarousel } from '../components/carousel/index'
-import { CRadio } from '../components/radio/index'
+import { CRadio, CRadioGroup } from '../components/radio/index'
 import { CLabel } from '../components/label/index'
 import { CBreadcrumb, CBreadcrumbItem } from '../components/breadcrumb/index'
 import { CPagination } from '../components/pagination/index'
@@ -18,6 +18,7 @@ Vue.component(CDropdown.name, CDropdown)
 Vue.component(CDropdownItem.name, CDropdownItem)
 Vue.component(CCarousel.name, CCarousel)
 Vue.component(CRadio.name, CRadio)
+Vue.component(CRadioGroup.name, CRadioGroup)
 Vue.component(CLabel.name, CLabel)
 Vue.component(CBreadcrumb.name, CBreadcrumb)
 Vue.component(CBreadcrumbItem.name, CBreadcrumbItem)
@@ -32,6 +33,7 @@ export {
     CDropdownItem,
     CCarousel,
     CRadio,
+    CRadioGroup,
     CLabel,
     CBreadcrumb,
     CBreadcrumbItem,
