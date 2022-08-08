@@ -65,9 +65,17 @@
 
         <c-label>
             <h3>Tooltip</h3>
-            <c-tooltip>
-                <c-button>tooltip</c-button>
-            </c-tooltip>
+            <div>
+                <c-tooltip text="기본 툴팁입니다!" isRound>
+                    <c-button>tooltip</c-button>
+                </c-tooltip>
+                <c-tooltip text="오른쪽 툴팁입니다!" isRight isRound>
+                    <c-button>right</c-button>
+                </c-tooltip>
+                <c-tooltip text="아래 툴팁입니다!" isBottom isRound>
+                    <span>bottom</span>
+                </c-tooltip>
+            </div>
         </c-label>
 
         <c-label>
