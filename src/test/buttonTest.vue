@@ -72,7 +72,8 @@
 
         <c-label>
             <h3>Tag</h3>
-            <c-tag pTextValue="primary"></c-tag>
+            <c-tag textValue="primary"></c-tag>
+            <c-tag textValue="success" isSuccess size="small"/>
         </c-label>
     </div>
 </template>

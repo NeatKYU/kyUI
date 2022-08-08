@@ -1,35 +1,35 @@
-c-tag {
+.c-tag {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 
-	width: auto;
+	max-width: 100px;
 
 	border: 1px solid $c-default-border-color;
+	border-radius: $c-border-radius;
+
+	font-size: 10px;
+
+	height: 20px;
+	padding: 3px 8px;
 
 	&.small {
-		height: 5px;
+		height: 15px;
+		padding: 3px 5px;
 	}
-	&.medium {
-		height: 8px;
-	}
+	
 	&.large {
-		height: 10px;
+		height: 25px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
 
 	&.is-primary {
-		color: $c-primary-color;
-		&:hover {
-			color: $c-primary-hover-color;
-		}
+		background-color: $c-primary-color;
 	}
 
 	&.is-success {
-		color: $c-success-color;
-
-		&:hover {
-			color: $c-success-hover-color;
-		}
+		background-color: $c-success-color;
 	}
 
 	&.is-rounded {

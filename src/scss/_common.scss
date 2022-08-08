@@ -23,7 +23,7 @@ $c-common-hover-color: lightgray;
 // 투명도 들어간 hover
 $c-common-trans-hover-color: rgba(0,0,0,0.4);
 
-$c-boder-radius: 5px;
+$c-border-radius: 5px;
 $c-rounded-border-radius: 20px;
 
 @import url('https://cdn.jsdelivr.net/npm/galmuri@latest/dist/galmuri.css');
@@ -32,7 +32,6 @@ $c-rounded-border-radius: 20px;
     box-sizing: border-box;
     font-family: Galmuri9;
 }
-
 .flex {
     display: flex;
 }

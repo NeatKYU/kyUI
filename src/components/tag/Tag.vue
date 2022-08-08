@@ -1,9 +1,9 @@
 <template>
 	<div 
 		class="c-tag"
-		:class="classes"
+		:class="[classes]"
 	>
-		{{ pTextValue }}
+		{{ textValue }}
 	</div>
 </template>
 
@@ -11,35 +11,35 @@
 export default {
 	name: 'c-tag',
 	props: {
-		pTextValue: {
+		textValue: {
 			type: String,
 			default: '',
 		},
-		pIsPrimary: {
+		isPrimary: {
 			type: Boolean,
 			default: true,
 		},
-		pIsSuccess: {
+		isSuccess: {
 			type: Boolean,
 			default: false,
 		},
-		pSize: {
+		size: {
 			type: String,
 			default: 'medium'
 		},
-		pIsRounded: {
+		isRounded: {
 			type: Boolean,
 			default: false,
 		},
 	},
-	methods: {
+	computed: {
 		classes() {
 			return {
-				'is-primary': this.pIsPrimary,
-				'is-success': this.pIsSuccess,
-				'is-rounded': this.pIsRounded,
-				'small': this.pSize === 'small',
-				'large': this.pSize === 'large',
+				'is-primary': this.isPrimary,
+				'is-success': this.isSuccess,
+				'is-rounded': this.isRounded,
+				'small': this.size === 'small',
+				'large': this.size === 'large',
 			}
 		}
 	}
