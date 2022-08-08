@@ -9,16 +9,15 @@
             :type="type"
             @input="updateInputValue"
             class="c-input"
-            :disabled="this.isDisabled"
+            :disabled="this.disabled"
         />
-            <!-- :disabled="this.isDisabled" -->
 
         <textarea
             v-else
             @input="updateInputValue"
             :placeholder="placeholder"
             class="c-textarea"
-            :disabled="this.isDisabled"
+            :disabled="this.disabled"
         ></textarea>
     </div>
 </template>
@@ -37,7 +36,7 @@ export default {
             type: Boolean,
             default: false,
         },
-        isDisabled: {
+        disabled: {
             type: Boolean,
             default: false,
         }
@@ -56,7 +55,7 @@ export default {
         },
         classes() {
             return {
-                'is-disabled': this.isDisabled
+                'is-disabled': this.disabled
             }
         }
     },

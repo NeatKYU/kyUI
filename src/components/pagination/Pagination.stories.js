@@ -16,5 +16,6 @@ Primary.args = {
     totalCount: 101,
     perPage: 10,
     currentPage: 1,
+    rounded: false,
 }
 

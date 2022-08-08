@@ -1,6 +1,11 @@
 <template>
     <div class="c-pagination">
-        <c-button @click="prev" leftIcon="angle-left" :disabled="cIsStartDisable"/>
+        <c-button 
+            @click="prev" 
+            leftIcon="angle-left" 
+            :disabled="cIsStartDisable" 
+            :rounded="this.rounded"
+        />
         <div class="flex">
             <div 
                 v-for="page in sPageList"
@@ -12,7 +17,12 @@
                 {{ page }}
             </div>
         </div>
-        <c-button @click="next" rightIcon="angle-right" :disabled="cIsEndDisable"/>
+        <c-button 
+            @click="next" 
+            rightIcon="angle-right" 
+            :disabled="cIsEndDisable" 
+            :rounded="this.rounded"
+        />
     </div>
 </template>
 
@@ -37,6 +47,10 @@ export default {
             type: Number,
             default: 1,
             required: true,
+        },
+        rounded: {
+            type: Boolean,
+            default: false,
         }
     },
     data() {
@@ -61,6 +75,7 @@ export default {
         paginationClass(aPage) {
             return {
                 'is-active': this.sCurrentPage === aPage,
+                'is-rounded': this.rounded,
             }
         },
         move(aPage) {

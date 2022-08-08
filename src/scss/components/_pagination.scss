@@ -21,6 +21,10 @@
         pointer-events: none;
     }
 
+    &.is-rounded {
+        border-radius: $c-rounded-border-radius;
+    }
+
     &:hover {
         border-color: $c-primary-hover-color;
     }

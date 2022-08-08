@@ -27,7 +27,7 @@ export default {
 			type: String,
 			default: 'medium'
 		},
-		isRounded: {
+		rounded: {
 			type: Boolean,
 			default: false,
 		},
@@ -37,7 +37,7 @@ export default {
 			return {
 				'is-primary': this.isPrimary,
 				'is-success': this.isSuccess,
-				'is-rounded': this.isRounded,
+				'is-rounded': this.rounded,
 				'small': this.size === 'small',
 				'large': this.size === 'large',
 			}

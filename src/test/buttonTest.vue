@@ -13,7 +13,7 @@
         </c-label>
         <c-label>
             <h3>Input</h3>
-            <c-input v-model="inputText" placeholder="disabled" isDisabled/>
+            <c-input v-model="inputText" placeholder="disabled" disabled/>
             <c-input v-model="inputText" type="textarea" />
             <c-input v-model="inputText" type="email" isValidate/>
             <div>{{ this.inputText }}</div>
@@ -61,19 +61,21 @@
                 @changePage="changePage" 
                 :totalCount=101
                 :perPage=5
-                :currentPage="this.currentPage" />
+                :currentPage="this.currentPage"
+                rounded
+            />
         </c-label>
 
         <c-label>
             <h3>Tooltip</h3>
             <div>
-                <c-tooltip text="기본 툴팁입니다!" isRound>
+                <c-tooltip text="기본 툴팁입니다!">
                     <c-button>tooltip</c-button>
                 </c-tooltip>
-                <c-tooltip text="오른쪽 툴팁입니다!" isRight isRound>
+                <c-tooltip text="오른쪽 툴팁입니다!" isRight rounded>
                     <c-button>right</c-button>
                 </c-tooltip>
-                <c-tooltip text="아래 툴팁입니다!" isBottom isRound>
+                <c-tooltip text="아래 툴팁입니다!" isBottom rounded>
                     <span>bottom</span>
                 </c-tooltip>
             </div>

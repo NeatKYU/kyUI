@@ -39,7 +39,7 @@ export default {
             type: Boolean,
             default: false,
         },
-        isRound: {
+        rounded: {
             type: Boolean,
             default: false,
         }
@@ -56,7 +56,7 @@ export default {
                 'is-left': this.isLeft,
                 'is-right': this.isRight,
                 'is-bottom': this.isBottom,
-                'is-rounded': this.isRound
+                'is-rounded': this.rounded
             }
         },
     },
