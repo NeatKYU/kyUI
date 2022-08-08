@@ -13,8 +13,9 @@
         </c-label>
         <c-label>
             <h3>Input</h3>
-            <c-input v-model="inputText" />
-            <c-input v-model="inputText" pType="textarea" />
+            <c-input v-model="inputText" placeholder="disabled" isDisabled/>
+            <c-input v-model="inputText" type="textarea" />
+            <c-input v-model="inputText" type="email" isValidate/>
             <div>{{ this.inputText }}</div>
         </c-label>
 

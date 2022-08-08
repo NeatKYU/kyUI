@@ -50,4 +50,22 @@
     &:hover {
         border-color: $c-hover-border-color;
     }
+    &.is-danger {
+        box-shadow: $c-danger-color 0px 0px 5px;
+        border-color: $c-danger-color;
+    }
+    &.is-success {
+        box-shadow: $c-success-color 0px 0px 5px;
+        border-color: $c-success-color;
+    }
+    &.is-disabled {
+        border-color: lightgray;
+        background-color: lightgray;
+        input:disabled {
+            cursor: not-allowed;
+        }
+        ::placeholder {
+            color: rgb(165, 164, 164);
+        }
+    }
 }
