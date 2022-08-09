@@ -1,24 +1,40 @@
-# coding
+# KyUI
 
-## Project setup
+## Install
 ```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
+npm install vue-kyui
 ```
 
-### Compiles and minifies for production
+### Useage
 ```
-npm run build
+import Vue from 'vue'
+import kyui from 'vue-kyui'
+import 'vue-kyui/dist/kyui.scss';
+
+Vue.use(kyui)
 ```
 
-### Lints and fixes files
+### Use Icon
 ```
-npm run lint
+npm install @fortawesome/fontawesome-svg-core
+npm install @fortawesome/free-solid-svg-icons
+npm install @fortawesome/free-regular-svg-icons
+npm install @fortawesome/free-brands-svg-icons
 ```
+##### and make file
+```
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+export default library.add(
+    fas, far, fab
+)
+```
+##### and add app.vue
+```
+<script>
+    import './fontIcon/index'
+</script>
+```
