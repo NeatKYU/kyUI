@@ -86,6 +86,14 @@
             <c-tag textValue="primary"></c-tag>
             <c-tag textValue="success" isSuccess size="small"/>
         </c-label>
+
+        <c-label>
+            <h3>Switch</h3>
+            <c-switch @change="changeValue" size="large"/>
+            <c-switch />
+            <c-switch size="small"/>
+            <div>{{ onoff }}</div>
+        </c-label>
     </div>
 </template>
 
@@ -115,6 +123,7 @@ export default {
             ],
             inputValue: '',
             currentPage: 1,
+            onoff: false,
         }
     },
     methods: {
@@ -124,6 +133,9 @@ export default {
         changePage(aPage) {
             this.currentPage = aPage;
             console.log('this page = ', this.currentPage)
+        },
+        changeValue(aOnOff){
+            this.onoff = aOnOff;
         }
     }
 }
