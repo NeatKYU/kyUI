@@ -1,0 +1,695 @@
+// commom scss start
+$c-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+$c-strong-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+// color
+// primary
+$c-primary-color: #5e737d;
+$c-primary-hover-color: #4a5c64;
+
+//success
+$c-success-color: #198754;
+$c-success-hover-color: #1da062;
+
+//fail
+$c-danger-color: lightcoral;
+
+
+// border
+$c-default-border-color: rgb(202, 202, 202);
+$c-hover-border-color: gray;
+
+// white
+$c-white-color: #FFF;
+
+// common hover color
+$c-common-hover-color: lightgray;
+
+// 투명도 들어간 hover
+$c-common-trans-hover-color: rgba(0,0,0,0.4);
+
+$c-border-radius: 5px;
+$c-rounded-border-radius: 20px;
+
+* {
+    box-sizing: border-box;
+    font-family: Galmuri9;
+}
+.flex {
+    display: flex;
+}
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+.relative {
+    position: relative;
+}
+// commom scss end
+
+// button scss start
+.c-button {
+    width: auto;
+    height: 40px;
+    
+    font-size: 16px;
+    padding: 2px 16px;
+
+    background-color: $c-white-color;
+    
+    border-radius: $c-border-radius;
+    border: 1px solid $c-default-border-color;
+
+    &:hover {
+        border-color: $c-hover-border-color
+    }
+
+    cursor: pointer;
+
+    &.is-primary {
+        background-color: $c-primary-color;
+        color: $c-white-color;
+
+        border: none;
+
+        &:hover {
+            background-color: $c-primary-hover-color
+        }
+    }
+
+    &.is-rounded {
+        border-radius: $c-rounded-border-radius;
+    }
+
+    &.is-disabled {
+        color: rgb(165, 164, 164);
+        border-color: lightgray;
+        background-color: lightgray;
+        cursor: not-allowed;
+        
+        &:hover {
+            background-color: lightgray;
+        }
+    }
+
+    &.small {
+        height: 30px;
+    }
+    
+    &.medium {
+        height: 40px;
+    }
+
+    &.large {
+        height: 50px;
+    }
+}
+// button scss end
+
+// carousel scss start
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.9s ease;
+  overflow: hidden;
+  visibility: visible;
+  position: absolute;
+  width:100%;
+  opacity: 1;
+}
+
+.fade-enter,
+.fade-leave-to {
+  visibility: hidden;
+  width:100%;
+  opacity: 0;
+}
+
+img {
+  height:600px;
+  width:100%
+}
+
+.contents {
+  min-height: 100px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  top:0;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.7s ease;
+  text-decoration: none;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+}
+
+.prev {
+  left: 0;
+}
+
+.prev:hover, .next:hover {
+  background-color: $c-common-trans-hover-color;
+}
+
+.c-carousel-indicator {
+  position: absolute;
+  bottom: 0;
+
+  width: 100%;
+  height: 50px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+
+  background-color: rgba(0, 0, 0, 0.588);
+
+  &__nav {
+    width: 10px;
+    height: 10px;
+    
+    background-color: white;
+
+    cursor: pointer;
+
+    &:hover {
+      background-color: $c-common-hover-color;
+    }
+  }
+}
+// carousel scss end
+
+// dropdown scss start
+.c-dropdown-wrapper {
+    height: auto;
+    display: inline-flex;
+
+    position: relative;
+}
+
+.c-dropdown-item-wrapper {
+    min-width: 150px;
+    // height: 200px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    background-color: $c-white-color;
+    z-index: 10;
+
+    box-shadow: $c-box-shadow;
+
+    position: absolute;
+    top: 43px;
+    left: 3px;
+}
+
+.c-dropdown-item {
+    width: 100%;
+    height: 30px;
+
+    padding: 5px 10px;
+    
+    cursor: pointer;
+
+    &:hover {
+        background-color: $c-common-hover-color;
+    }
+}
+// dropdown scss end
+
+// input scss start
+.c-input {
+    width: 100%;
+    height: 35px;
+
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    
+    font-size: 16px;
+
+    padding: 5px 16px;
+}
+
+.c-textarea {
+    width: 100%;
+    min-height: 150px;
+    height: 100%;
+
+    font-size: 16px;
+
+    border: none;
+    border-radius: 5px;
+    padding: 5px 16px;
+
+    resize: vertical;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.input-wrapper {
+    width: 100%;
+    height: 100%;
+
+    // padding: 5px 16px;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid $c-default-border-color;
+    border-radius: 5px;
+    box-shadow: $c-box-shadow;
+
+    background-color: $c-white-color;
+
+    &:hover {
+        border-color: $c-hover-border-color;
+    }
+    &.is-danger {
+        box-shadow: $c-danger-color 0px 0px 5px;
+        border-color: $c-danger-color;
+    }
+    &.is-success {
+        box-shadow: $c-success-color 0px 0px 5px;
+        border-color: $c-success-color;
+    }
+    &.is-disabled {
+        border-color: lightgray;
+        background-color: lightgray;
+        input:disabled {
+            cursor: not-allowed;
+        }
+        ::placeholder {
+            color: rgb(165, 164, 164);
+        }
+    }
+}
+// input scss end
+
+// label scss start
+.c-label {
+    display: inline-flex;
+    flex-direction: column;
+
+    width: fit-content;
+}
+// label scss end
+
+// pagination scss start
+.c-pagination {
+    display: flex;
+    gap: 20px;
+}
+.c-pagination-item {
+    width: 40px;
+    height: 40px;
+
+    border: 1px solid $c-default-border-color;
+    border-radius: $c-border-radius;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+
+    &.is-active {
+        background-color: $c-primary-color;
+        color: $c-white-color;
+        pointer-events: none;
+    }
+
+    &.is-rounded {
+        border-radius: $c-rounded-border-radius;
+    }
+
+    &:hover {
+        border-color: $c-primary-hover-color;
+    }
+}
+
+.c-pagination-prev-btn,
+.c-pagination-next-btn {
+    
+}
+// pagination scss end
+
+// radio scss start
+.c-radio-label {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    cursor: pointer;
+    
+    position: relative;
+
+    input[type='radio'],
+    input[type='radio']:checked {
+        width: 20px;
+        height: 20px;
+        margin: 3px 5px;
+        border-radius: 100%;
+        border: 2px solid black;
+        
+        position: relative;
+
+        cursor: pointer;
+        
+        &:hover {
+            border-color: $c-primary-hover-color
+        }
+    
+        &:focus {
+            box-shadow: $c-strong-box-shadow;
+            border-color: $c-primary-hover-color;
+        }
+        
+        &:after  {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: $c-primary-color;
+            border-radius: 100%;
+            width: 0;
+            height: 0;
+            transition: width .2s, height .2s;
+        }
+    
+        &.button {
+            position: absolute;
+            left: 0;
+            opacity: 0;
+        }
+    }
+
+    input[type='radio']:checked {
+        border-color: $c-primary-hover-color;
+        &::after {
+            width: 60%;
+            height: 60%;
+        }
+    }
+}
+
+.c-radio-input {
+    // input효과 지우고 새로운걸 다시 넣는다.
+    appearance: none;
+}
+
+.c-radio-span {
+    &.button-mode {
+        width: auto;
+        height: 30px;
+        padding: 5px 10px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border: 1px solid $c-default-border-color;
+    }
+}
+
+.is-selected {
+    background-color: $c-primary-color;
+
+    &:hover {
+        background-color: $c-primary-hover-color;
+    }
+}
+// radio scss end
+
+// switch scss start
+.c-switch {
+    width: 50px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    padding: 0 5px;
+
+    background-color: lightgray;
+
+    border-radius: $c-rounded-border-radius;
+
+    .c-switch-ball {
+        width: 20px;
+        height: 20px;
+        
+        background-color: white;
+    
+        border-radius: $c-rounded-border-radius;
+    }
+
+    &.is-small {
+        width: 40px;
+        height: 25px;
+
+        .c-switch-ball {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    &.is-large {
+        width: 60px;
+        height: 35px;
+        
+        padding: 0 8px;
+
+        .c-switch-ball {
+            width: 23px;
+            height: 23px;
+        }
+    }
+}
+
+.on {
+    background-color: $c-success-color;
+}
+
+.off {
+    background-color: lightgray;
+}
+
+// switch scss end
+
+// tag scss start
+.c-tag {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	max-width: 100px;
+
+	border: 1px solid $c-default-border-color;
+	border-radius: $c-border-radius;
+
+	font-size: 10px;
+
+	height: 20px;
+	padding: 3px 8px;
+
+	&.small {
+		height: 15px;
+		padding: 3px 5px;
+	}
+	
+	&.large {
+		height: 25px;
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+
+	&.is-primary {
+		background-color: $c-primary-color;
+	}
+
+	&.is-success {
+		background-color: $c-success-color;
+	}
+
+	&.is-rounded {
+		border-radius: $c-rounded-border-radius;
+	}
+}
+// tag scss end
+
+// tooltip scss start
+.c-tooltip {
+    position: relative;
+    display: inline-flex;
+
+    .c-tooltip-item {
+        background-color: $c-primary-color;
+
+        white-space: nowrap;
+        text-align: center;
+
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        width: auto;
+        height: auto;
+        padding: 3px 10px;
+
+        z-index: 100;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            border: 9px solid transparent;
+            border-bottom-width: 0;
+            border-top-color: $c-primary-color;
+            top: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &.is-left {
+            top: 50%;
+            transform: translateY(-50%);
+            right: calc(100% + 10px);
+            left: unset;
+            &:after {
+                top: 50%;
+                left: unset;
+                right: -3px;
+                border-right-width: 0;
+                border-right-color: $c-primary-color;
+                transform: translateY(-50%) rotate(45deg);
+            }
+        }
+
+        &.is-right {
+            top: 50%;
+            left: calc(100% + 10px);
+            transform: translateY(-50%);
+            &:after {
+                top: 50%;
+                left: 0;
+                border-left-width: 0;
+                border-left-color: $c-primary-color;
+                transform: rotate(-45deg) translateY(-50%);
+            }
+        }
+
+        &.is-bottom {
+            top: inherit;
+            bottom: -40px;
+
+            &:after {
+                top: -5px;
+                border-top-width: 0;
+                border-bottom-width: 10px;
+                border-bottom-color: $c-primary-color;
+            }
+        }
+
+        &.is-rounded {
+            border-radius: $c-border-radius;
+        }
+
+
+        &.is-animation {
+            animation: fadeIn .5s ease-in-out;
+        }
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+// tooltip scss end
+
+// breadcrumb scss start
+.c-breadcrumb {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+
+    font-size: 20px;
+    color: $c-primary-color;
+
+    li::before {
+        content: '/';
+    }
+
+    :first-child::before {
+        content: '';
+    }
+
+    li {
+        display: flex;
+        gap: 10px;
+
+        &:hover {
+            color: black;
+
+            &:before {
+                color: $c-primary-color;
+            }
+        }
+    }
+
+    :first-child {
+        gap: 0px;
+    }
+    
+    a, link {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .is-active {
+        color: black;
+
+        &:before {
+            color: $c-primary-color;
+        }
+    }
+}
+// breadcrumb scss end
