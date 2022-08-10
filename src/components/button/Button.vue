@@ -22,12 +22,6 @@ export default {
     props: {
         type: [String, Object],
         label: String,
-        leftIcon: String,
-        rightIcon: String,
-        primary: {
-            type: Boolean,
-            default: false,
-        },
         size: {
             type: String,
             default: 'medium'
@@ -39,6 +33,10 @@ export default {
                 return config.defaultLinkTags.indexOf(value) >= 0
             }
         },
+        primary: {
+            type: Boolean,
+            default: false,
+        },
         rounded: {
             type: Boolean,
             default: false,
@@ -46,7 +44,9 @@ export default {
         disabled: {
             type: Boolean,
             default: false,
-        }
+        },
+        leftIcon: String,
+        rightIcon: String,
     },
     computed: {
         computedTag() {

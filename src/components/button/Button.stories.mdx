@@ -1,0 +1,128 @@
+import {
+  Canvas,
+  Meta,
+  Story,
+  Props,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
+import Button from "./Button";
+
+<Meta
+  title="Button"
+  component={Button}
+  argTypes={{
+    type: {
+      description: "버튼의 스타일에 적용되는 `type`",
+      control: null,
+      table: {
+        category: null,
+      },
+    },
+    tag: {
+      description:
+        "버튼을 감싸는 `div`를 설정해줍니다. 기본적으로 `button`으로 설정되고 `a` `link`등등 다양합니다.",
+      defaultValue: "button",
+      table: {
+        category: null,
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: [
+          "a",
+          "button",
+          "input",
+          "router-link",
+          "nuxt-link",
+          "n-link",
+          "RouterLink",
+          "NuxtLink",
+          "NLink",
+        ],
+      },
+    },
+    label: {
+      description:
+        "버튼에 들어가는 내용입니다. `children`으로 넣어줘도 되지만 `label`속성에 넣어주어도 무관합니다.",
+      table: {
+        category: null,
+      },
+    },
+    size: {
+      description:
+        "버튼의 크기를 조절합니다. `small` `medium` `large`가 있습니다.",
+      defaultValue: "medium",
+      table: {
+        category: null,
+        type: {
+          summary: null,
+        },
+      },
+      control: {
+        type: "select",
+        options: ["small", "medium", "large"],
+      },
+    },
+    primary: {
+      description: "버튼에 `primary`색상을 입힙니다.",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+    rounded: {
+      description: "둥근 버튼으로 만들어줍니다.",
+      defaultValue: false,
+      table: {
+        category: null,
+        type: {
+          summary: null,
+        },
+      },
+    },
+    disabled: {
+      description: "`button`태그의 `disabled` 속성입니다.",
+      defaultValue: false,
+      table: {
+        category: null,
+        type: {
+          summary: null,
+        },
+      },
+    },
+    leftIcon: {
+      description: "버튼 왼쪽 아이콘",
+      defaultValue: "",
+      table: {
+        category: "Icon",
+      },
+    },
+    rightIcon: {
+      description: "버튼 오른쪽 아이콘",
+      defaultValue: "",
+      table: {
+        category: "Icon",
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Button },
+  template: '<c-button v-bind="$props">button</c-button>',
+});
+
+# Button
+
+**Button** 컴포넌트의 문서입니다.
+
+<Canvas>
+  <Story name="docs" height="100px">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="docs" />

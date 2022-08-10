@@ -1,5 +1,5 @@
 import { addParameters } from '@storybook/vue'
-import { DocsPage, DocsContainer } from '@storybook/addon-docs'
+import { DocPage, DocsContainer } from '@storybook/addon-docs'
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -14,7 +14,7 @@ export const parameters = {
 addParameters({
   docs: {
     container: DocsContainer,
-    page: DocsPage
+    page: DocPage
   }
 })
 
@@ -22,3 +22,4 @@ import '../src/plugins/GlobalComponent';
 import '../src/plugins/GlobalFont';
 import '../src/scss/_main.scss';
 import '../src/fontIcon/index';
+import './font.scss';
