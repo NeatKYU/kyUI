@@ -26,12 +26,5 @@ export default {
         headerList: [],
         dataList: [],
     },
-    created() {
-        this.dataList.map((data) => {
-            for(var index in data){
-                console.log(index)
-            }
-        })
-    }
 };
 </script>
