@@ -12,6 +12,7 @@ import { CPagination } from '../components/pagination/index'
 import { CTooltip } from '../components/tootip/index'
 import { CTag } from '../components/tag/index'
 import { CSwitch } from '../components/switch/index'
+import { CTable } from '../components/table/index'
 
 Vue.component(CButton.name, CButton)
 Vue.component(CIcon.name, CIcon)
@@ -28,6 +29,7 @@ Vue.component(CPagination.name, CPagination)
 Vue.component(CTooltip.name, CTooltip)
 Vue.component(CTag.name, CTag)
 Vue.component(CSwitch.name, CSwitch)
+Vue.component(CTable.name, CTable)
 
 export {
     CButton,
@@ -45,4 +47,5 @@ export {
     CTooltip,
     CTag,
     CSwitch,
+    CTable,
 }

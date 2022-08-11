@@ -94,6 +94,13 @@
             <c-switch size="small"/>
             <div>{{ onoff }}</div>
         </c-label>
+
+        <c-label>
+            <h3>Table</h3>
+            <c-table :headerList="headerList" :dataList="dataList">
+
+            </c-table>
+        </c-label>
     </div>
 </template>
 
@@ -124,6 +131,28 @@ export default {
             inputValue: '',
             currentPage: 1,
             onoff: false,
+            headerList: [
+                'ID', 'firstName', 'lastName'
+            ],
+            dataList: [
+                {
+                    id: 1,
+                    firstName: 'seung',
+                    lastName: 'kyu'
+                },{
+                    id: 2,
+                    firstName: 'seung2',
+                    lastName: 'kyu2'
+                },{
+                    id: 3,
+                    firstName: 'seung3',
+                    lastName: 'kyu3'
+                },{
+                    id: 4,
+                    firstName: 'seung4',
+                    lastName: 'kyu4'
+                },
+            ]
         }
     },
     methods: {

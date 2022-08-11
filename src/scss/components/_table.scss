@@ -1,0 +1,24 @@
+.c-table-warpper {
+
+}
+
+.c-table {
+    width: 100%;
+    min-height: 100px;
+
+    background-color: bisque;
+}
+
+.c-table-header {
+    th {
+        padding: 2px 10px;
+    }
+
+    background-color: aquamarine;
+}
+
+.c-table-body {
+    td {
+        padding: 3px 10px;
+    }
+}

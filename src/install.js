@@ -10,6 +10,7 @@ import { CPagination } from './components/pagination/index'
 import { CTooltip } from './components/tootip/index'
 import { CTag } from './components/tag/index'
 import { CSwitch } from './components/switch/index'
+import { CTable } from './components/table/index'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const components = [
@@ -28,6 +29,7 @@ const components = [
     CTooltip,
     CTag,
     CSwitch,
+    CTable,
 ]
 
 const kyui = {
