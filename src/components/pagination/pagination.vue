@@ -120,9 +120,15 @@ export default {
         }
     },
     created() {
-        this.sTotalPage = Math.ceil(this.totalCount / this.perPage);
-        for(let i=1; i<=this.perPage; i++) {
-            this.sPageList.push(i)
+        this.sTotalPage = Math.ceil(this.totalCount / this.perPage) === 0 ? 1 : Math.ceil(this.totalCount / this.perPage);
+        if(this.sTotalPage < this.perPage){
+            for(let i=1; i<=this.sTotalPage; i++) {
+                this.sPageList.push(i)
+            }
+        } else {
+            for(let i=1; i<=this.perPage; i++) {
+                this.sPageList.push(i)
+            }
         }
     }
 };
