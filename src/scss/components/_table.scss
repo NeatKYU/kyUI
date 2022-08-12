@@ -1,5 +1,9 @@
-.c-table-warpper {
+.c-table-wrapper {
 
+    .c-pagination {
+        justify-content: center;
+        margin: 1em;
+    }
 }
 
 .c-table {
@@ -33,8 +37,5 @@
     td {
         padding: .7em 1em;
         border-width: 0 0 1px;
-    }
-    td:nth-child(1) {
-        text-align: right;
     }
 }

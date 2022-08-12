@@ -59,10 +59,9 @@
             <h3>Pagination</h3>
             <c-pagination 
                 @changePage="changePage" 
-                :totalCount=101
+                :totalCount=4
                 :perPage=5
                 :currentPage="this.currentPage"
-                rounded
             />
         </c-label>
 
@@ -95,12 +94,18 @@
             <div>{{ onoff }}</div>
         </c-label>
 
-        <c-label>
-            <h3>Table</h3>
-            <c-table :headerList="headerList" :dataList="dataList">
+        <h3>Table</h3>
+        <c-table 
+            :headerList="headerList" 
+            :dataList="dataList" 
+            :dataTotalCount="this.dataList.length"
+            :currentPage="this.currentPage" 
+            :changePage="changePage"
+            :perPage=10
+            isPagination
+        />
 
-            </c-table>
-        </c-label>
+        <div :style="{height: '200px'}"></div>
     </div>
 </template>
 
@@ -149,8 +154,20 @@ export default {
                     lastName: 'kyu3'
                 },{
                     id: 4,
-                    firstName: 'seung4',
-                    lastName: 'kyu4'
+                    firstName: 'seunzzsdfsdg4',
+                    lastName: 'eet'
+                },{
+                    id: 5,
+                    firstName: 'aaa',
+                    lastName: 'aaaasd'
+                },{
+                    id: 6,
+                    firstName: 'qwrqr',
+                    lastName: 'sdfsfds'
+                },{
+                    id: 7,
+                    firstName: 'tttttttt',
+                    lastName: 'aaaaa'
                 },
             ]
         }
