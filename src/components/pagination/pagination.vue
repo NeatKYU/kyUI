@@ -65,7 +65,7 @@ export default {
     },
     computed: {
         cIsEndDisable() {
-            return this.sTotalPage === this.currentPage //next disable
+            return this.sTotalPage === this.sCurrentPage //next disable
         },
         cIsStartDisable() {
             return this.sCurrentPage === 1
