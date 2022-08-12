@@ -5,6 +5,8 @@ import {
   Props,
   ArgsTable,
 } from "@storybook/addon-docs/blocks";
+import { screen } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
 import Button from "./Button";
 
 <Meta
@@ -112,7 +114,7 @@ import Button from "./Button";
 export const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { Button },
-  template: '<c-button v-bind="$props">button</c-button>',
+  template: '<c-button v-bind="$props"></c-button>',
 });
 
 # Button
@@ -120,7 +122,19 @@ export const Template = (args, { argTypes }) => ({
 **Button** 컴포넌트의 문서입니다.
 
 <Canvas>
-  <Story name="default" height="100px">
+  <Story
+    name="default"
+    args={{
+      label: "default",
+    }}
+    height="100px"
+    play={async ({ args }) => {
+      const button = screen.getByRole("button");
+      if (typeof args.label === "string") {
+        expect(button).toHaveTextContent(args.label);
+      }
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
