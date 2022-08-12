@@ -51,6 +51,11 @@ $c-rounded-border-radius: 20px;
 .c-button {
     width: auto;
     height: 40px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
     
     font-size: 16px;
     padding: 2px 16px;
@@ -101,6 +106,7 @@ $c-rounded-border-radius: 20px;
     }
 
     &.large {
+        min-width: 100px;
         height: 50px;
     }
 }
@@ -658,7 +664,7 @@ img {
         content: '/';
     }
 
-    :first-child::before {
+    :first-of-type::before {
         content: '';
     }
 
@@ -675,7 +681,7 @@ img {
         }
     }
 
-    :first-child {
+    :first-of-type {
         gap: 0px;
     }
     
@@ -693,3 +699,47 @@ img {
     }
 }
 // breadcrumb scss end
+
+// table scss start
+.c-table-wrapper {
+
+    .c-pagination {
+        justify-content: center;
+        margin: 1em;
+    }
+}
+
+.c-table {
+    width: 100%;
+    min-height: 100px;
+
+    border-collapse: collapse;
+}
+
+.c-table-header {
+    text-align: left;
+    tr {
+        border-bottom: 4px solid $c-default-border-color;
+    }
+
+    th {
+        padding: .7em 1em;
+    }
+}
+
+.c-table-body {
+    tr {
+        border-bottom: 1px solid $c-default-border-color;
+    }
+    tr:last-child {
+        border-bottom: none;
+    }
+    tr:hover {
+        background-color: $c-common-hover-color;
+    }
+    td {
+        padding: .7em 1em;
+        border-width: 0 0 1px;
+    }
+}
+// table scss end

@@ -12,7 +12,7 @@
         content: '/';
     }
 
-    :first-child::before {
+    :first-of-type::before {
         content: '';
     }
 
@@ -29,7 +29,7 @@
         }
     }
 
-    :first-child {
+    :first-of-type {
         gap: 0px;
     }
     
