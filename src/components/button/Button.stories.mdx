@@ -120,9 +120,102 @@ export const Template = (args, { argTypes }) => ({
 **Button** 컴포넌트의 문서입니다.
 
 <Canvas>
-  <Story name="docs" height="100px">
+  <Story name="default" height="100px">
     {Template.bind({})}
   </Story>
 </Canvas>
 
-<ArgsTable story="docs" />
+<ArgsTable story="default" />
+
+## 예제
+
+#### Colors
+
+더욱 더 추가될 예정
+
+<Canvas>
+  <Story
+    name="primary"
+    args={{
+      label: "primary",
+      primary: true,
+    }}
+    height="100px"
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="disabled"
+    args={{
+      label: "disabled",
+      disabled: true,
+    }}
+    height="100px"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### Size
+
+`size`의 속성에 따라서 버튼의 w,h가 증감합니다.
+
+<Canvas>
+  <Story
+    name="small"
+    args={{
+      label: "small",
+      size: "small",
+    }}
+    height="100px"
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="medium"
+    args={{
+      label: "medium",
+      size: "medium",
+    }}
+    height="100px"
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="large"
+    args={{
+      label: "large",
+      size: "large",
+    }}
+    height="100px"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+#### with Icon
+
+`leftIcon`, `rightIcon` 속성에 `fontawsome`에서 제공하는 아이콘의 이름을 넣어주면 된다.
+
+<Canvas>
+  <Story
+    name="leftIcon"
+    args={{
+      label: "leftIcon",
+      leftIcon: "angle-left",
+    }}
+    height="100px"
+  >
+    {Template.bind({})}
+  </Story>
+  <Story
+    name="rightIcon"
+    args={{
+      label: "rightIcon",
+      rightIcon: "angle-right",
+    }}
+    height="100px"
+  >
+    {Template.bind({})}
+  </Story>
+</Canvas>
