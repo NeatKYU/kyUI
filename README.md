@@ -40,4 +40,4 @@ export default library.add(
 ```
 
 ## 스토리북 데모 페이지
-https://62f34ed2f44bd94b7764438f-aivydkxbio.chromatic.com/?path=/docs/button--docs
+https://master--62f34ed2f44bd94b7764438f.chromatic.com/
