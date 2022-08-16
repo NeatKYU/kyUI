@@ -1,0 +1,70 @@
+import {
+  Canvas,
+  Meta,
+  Story,
+  Props,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
+import { screen } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
+import Pagination from "./Pagination";
+
+<Meta
+  title="components/Pagination"
+  component={Pagination}
+  argTypes={{
+    totalCount: {
+      description: "`data`의 총 개수",
+      defaultValue: 0,
+      table: {
+        category: null,
+      },
+    },
+    perPage: {
+      description: "한번에 보여줄 데이터 개수",
+      defaultValue: 10,
+      table: {
+        category: null,
+      },
+    },
+    showPage: {
+      description: "한번에 보여줄 페이지 개수",
+      defaultValue: 10,
+      table: {
+        category: null,
+      },
+    },
+    currentPage: {
+      description: "현재 페이지 처음엔 무조건 1로 설정",
+      defaultValue: 1,
+      table: {
+        category: null,
+      },
+    },
+    rounded: {
+      description: "pagination의 스타일을 둥글게 만들어준다.",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Pagination },
+  template: '<c-pagination v-bind="$props"></c-pagination>',
+});
+
+# Pagination
+
+**Pagination** 컴포넌트 입니다.
+
+<Canvas>
+  <Story name="default" height="100px">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="default" />

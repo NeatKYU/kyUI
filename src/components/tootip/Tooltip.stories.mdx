@@ -1,0 +1,76 @@
+import {
+  Canvas,
+  Meta,
+  Story,
+  Props,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
+import Tooltip from "./Tooltip";
+
+<Meta
+  title="components/Tooltip"
+  component={Tooltip}
+  argTypes={{
+    text: {
+      description: "tooltip안에 들어갈 문구",
+      defaultValue: "default tooltip입니다.",
+      table: {
+        category: null,
+      },
+    },
+    animated: {
+      description: "툴팁이 서서히 나타나는 효과",
+      defaultValue: true,
+      table: {
+        category: null,
+      },
+    },
+    isLeft: {
+      description: "왼쪽에 나타나게 설정",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+    isRight: {
+      description: "오른쪽에 나타나게 설정",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+    isBottom: {
+      description: "아래쪽에 나타나게 설정",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+    rounded: {
+      description: "둥근 효과",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Tooltip },
+  template:
+    '<c-tooltip v-bind="$props"><c-button>tooltip</c-button></c-tooltip>',
+});
+
+# Tooltip
+
+**tooltip** 컴포넌트
+
+<Canvas style={{ overflow: "visible" }}>
+  <Story name="default" height="100px">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="default" />

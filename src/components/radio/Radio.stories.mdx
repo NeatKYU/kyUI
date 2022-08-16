@@ -1,0 +1,68 @@
+import {
+  Canvas,
+  Meta,
+  Story,
+  Props,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
+import { screen } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
+import Radio from "./Radio";
+
+<Meta
+  title="components/Radio/Single"
+  component={Radio}
+  argTypes={{
+    value: {
+      description:
+        "`label`과 비교해서 선택되었는지 판단하는 변수 사실상 `buttonMode`일때만 사용됨 개선할 필요가 있어보임",
+      defaultValue: "test1",
+      table: {
+        category: null,
+      },
+    },
+    groupName: {
+      description: "어느 그룹의 radio인지 구별하기 위한 변수",
+      defaultValue: "radio-gruop",
+      table: {
+        category: null,
+      },
+    },
+    label: {
+      description: "radio버튼 key값",
+      defaultValue: "test1",
+      table: {
+        category: null,
+      },
+    },
+    buttonMode: {
+      description: "버튼 스타일 적용 여부",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Radio },
+  template:
+    "<div>" +
+    '<c-radio v-bind="$props">test1</c-radio>' +
+    '<c-radio v-bind="$props">test2</c-radio>' +
+    "</div>",
+});
+
+# Raio
+
+**radio** 컴포넌트 입니다.
+
+<Canvas>
+  <Story name="default" height="100px">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="default" />

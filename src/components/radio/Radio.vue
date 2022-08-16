@@ -43,6 +43,7 @@ export default {
         },
         labelClass() {
             return {
+                //버튼 모드일때만 적용
                 'is-selected': this.isChecked && this.buttonMode
             }
         },

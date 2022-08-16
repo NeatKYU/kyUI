@@ -1,4 +1,4 @@
-import Pagination from './pagination'
+import Pagination from './Pagination'
 
 export {
     Pagination as CPagination

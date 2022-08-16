@@ -31,6 +31,9 @@ export default {
         type: {
             type: String,
             default: 'text',
+            validator(value) {
+                return ['text', 'textarea', 'email', 'phone'].includes(value)
+            }
         },
         isValidate: {
             type: Boolean,

@@ -1,0 +1,35 @@
+import {
+  Canvas,
+  Meta,
+  Story,
+  Props,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
+import { screen } from "@storybook/testing-library";
+import { expect } from "@storybook/jest";
+import Breadcrumb from "./Breadcrumb";
+
+<Meta title="components/Breadcrumb" component={Breadcrumb} argTypes={{}} />
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Breadcrumb },
+  template:
+    "<c-breadcrumb>" +
+    "<c-breadcrumb-item>one</c-breadcrumb-item>" +
+    "<c-breadcrumb-item>two</c-breadcrumb-item>" +
+    '<c-breadcrumb-item href="/three" active>three</c-breadcrumb-item>' +
+    "</c-breadcrumb>",
+});
+
+# Breadcrumb
+
+**breadcrumb** 컴포넌트 입니다.
+
+<Canvas>
+  <Story name="default" height="100px">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="default" />

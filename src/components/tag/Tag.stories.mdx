@@ -1,0 +1,72 @@
+import {
+  Canvas,
+  Meta,
+  Story,
+  Props,
+  ArgsTable,
+} from "@storybook/addon-docs/blocks";
+import Tag from "./Tag";
+
+<Meta
+  title="components/Tag"
+  component={Tag}
+  argTypes={{
+    textValue: {
+      description: "tag안에 들어갈 문구",
+      defaultValue: "tag",
+      table: {
+        category: null,
+      },
+    },
+    isPrimary: {
+      description: "primary 스타일의 tag",
+      defaultValue: true,
+      table: {
+        category: null,
+      },
+    },
+    isSuccess: {
+      description: "success 스타일의 tag",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+    size: {
+      description: "tag 컴포넌트의 크기를 정해줍니다.",
+      defaultValue: "medium",
+      control: {
+        type: "select",
+        options: ["small", "medium", "large"],
+      },
+      table: {
+        category: null,
+      },
+    },
+    rounded: {
+      description: "둥근 효과",
+      defaultValue: false,
+      table: {
+        category: null,
+      },
+    },
+  }}
+/>
+
+export const Template = (args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { Tag },
+  template: '<c-tag v-bind="$props"/>',
+});
+
+# Tag
+
+**tag** 컴포넌트
+
+<Canvas>
+  <Story name="default" height="100px">
+    {Template.bind({})}
+  </Story>
+</Canvas>
+
+<ArgsTable story="default" />
