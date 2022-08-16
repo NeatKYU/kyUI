@@ -21,7 +21,20 @@
 
         <c-label>
             <h3>dropdown</h3>
+            
+            <!-- 기본 dropdown형식 -->
             <c-dropdown :dropdownList="dropdownList"></c-dropdown>
+            
+            <!-- item custom 방식 -->
+            <c-dropdown>
+                <c-dropdown-item 
+                    v-for="(item,index) in dropdownList" 
+                    :key="item+'-'+index"
+                    @click="toggle"
+                >
+                    {{ item }}
+                </c-dropdown-item>
+            </c-dropdown>
         </c-label>
 
         <!-- <c-label>
