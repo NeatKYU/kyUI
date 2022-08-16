@@ -83,3 +83,15 @@
         background-color: $c-primary-hover-color;
     }
 }
+
+.c-radio-group {
+    display: flex;
+
+    &.is-row {
+        flex-direction: row;
+    }
+
+    &.is-column {
+        flex-direction: column;
+    }
+}

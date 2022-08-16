@@ -1,11 +1,11 @@
 <template>
-    <div class="flex">
-        <div v-for="item in pRadioList" :key="item">
+    <div class="c-radio-group" :class="classes">
+        <div v-for="item in radioList" :key="item">
             <c-radio 
-                v-model="inputValue" 
+                v-model="inputValue"
                 :label="item"
-                :buttonMode="pIsButton"
-            >{{ item }}</c-radio>        
+                :buttonMode="isButton"
+            >{{ item }}</c-radio>
         </div>
     </div>
 </template>
@@ -14,15 +14,30 @@
 export default {
     name: 'c-radio-group',
     props: {
-        pRadioList: [],
-        pIsButton: {
+        radioList: [],
+        isButton: {
             type: Boolean,
             default: false,
         },
+        sort: {
+            type: String,
+            default: 'horizontal',
+            validator(value) {
+                return ['horizontal', 'vertical'].includes(value)
+            }
+        }
     },
     data() {
         return {
             inputValue: '',
+        }
+    },
+    computed: {
+        classes() {
+            return {
+                'is-row': this.sort === 'horizontal',
+                'is-column': this.sort === 'vertical',
+            }
         }
     }
 };

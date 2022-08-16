@@ -24,7 +24,7 @@
             
             <!-- 기본 dropdown형식 -->
             <c-dropdown :dropdownList="dropdownList"></c-dropdown>
-            
+
             <!-- item custom 방식 -->
             <c-dropdown>
                 <c-dropdown-item 
@@ -49,7 +49,7 @@
         <c-label>
             <h3>radio</h3>
             <div>
-                <c-radio-group :pRadioList="radioList"/>
+                <c-radio-group :radioList="radioList" sort="vertical"/>
             </div>
             <div>
                 <c-radio v-model="inputValue" label="test4" buttonMode>test4</c-radio>
