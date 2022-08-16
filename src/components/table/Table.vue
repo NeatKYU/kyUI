@@ -21,6 +21,7 @@
             @changePage="changePage" 
             :totalCount="this.dataTotalCount"
             :perPage="this.perPage"
+            :showPage="this.showPage"
             :currentPage="this.currentPage"
         />
     </div>
@@ -50,6 +51,10 @@ export default {
             default: false,
         },
         perPage: {
+            type: Number,
+            default: 10,
+        },
+        showPage: {
             type: Number,
             default: 10,
         }

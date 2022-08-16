@@ -59,8 +59,9 @@
             <h3>Pagination</h3>
             <c-pagination 
                 @changePage="changePage" 
-                :totalCount=4
-                :perPage=5
+                :totalCount=1032
+                :perPage=10
+                :showPage=5
                 :currentPage="this.currentPage"
             />
         </c-label>
@@ -101,7 +102,7 @@
             :dataTotalCount="this.dataList.length"
             :currentPage="this.currentPage" 
             :changePage="changePage"
-            :perPage=10
+            :perPage=5
             isPagination
         />
 

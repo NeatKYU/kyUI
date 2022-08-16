@@ -59,7 +59,7 @@ export default {
             sCurrentShowPage: 1,
             sCurrentPage: 1,
             sStartPage: 1,
-            sEndPage: this.perPage,
+            sEndPage: this.showPage,
             sPageList: [],
         }
     },
@@ -97,7 +97,7 @@ export default {
 
                 if(this.sEndPage < this.sCurrentPage){
                     this.sStartPage = this.sCurrentPage;
-                    this.sEndPage = this.sTotalPage < (this.sStartPage + this.perPage) ? this.sTotalPage : this.sStartPage + this.perPage - 1;
+                    this.sEndPage = this.sTotalPage < (this.sStartPage + this.showPage) ? this.sTotalPage : this.sStartPage + this.showPage - 1;
                     this.setPageList(this.sStartPage, this.sEndPage);
                 }
             }
@@ -109,7 +109,7 @@ export default {
                 this.updatePage(this.sCurrentPage);
 
                 if(this.sStartPage > this.sCurrentPage){
-                    this.sStartPage = this.sCurrentPage - this.perPage + 1;
+                    this.sStartPage = this.sCurrentPage - this.showPage + 1;
                     this.sEndPage = this.sCurrentPage;
                     this.setPageList(this.sStartPage, this.sEndPage);
                 }
@@ -121,12 +121,12 @@ export default {
     },
     created() {
         this.sTotalPage = Math.ceil(this.totalCount / this.perPage) === 0 ? 1 : Math.ceil(this.totalCount / this.perPage);
-        if(this.sTotalPage < this.perPage){
+        if(this.sTotalPage < this.showPage){
             for(let i=1; i<=this.sTotalPage; i++) {
                 this.sPageList.push(i)
             }
         } else {
-            for(let i=1; i<=this.perPage; i++) {
+            for(let i=1; i<=this.showPage; i++) {
                 this.sPageList.push(i)
             }
         }
