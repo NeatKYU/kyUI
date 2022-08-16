@@ -525,37 +525,40 @@ img {
 
 // tag scss start
 .c-tag {
-	display: flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-
-	max-width: 100px;
 
 	border: 1px solid $c-default-border-color;
 	border-radius: $c-border-radius;
 
-	font-size: 10px;
+	font-size: 13px;
 
 	height: 20px;
-	padding: 3px 8px;
+	padding: 0 8px;
 
 	&.small {
 		height: 15px;
-		padding: 3px 5px;
+		padding: 0 7px;
+
+		font-size: 11px;
 	}
 	
 	&.large {
-		height: 25px;
-		padding-left: 10px;
-		padding-right: 10px;
+		height: 23px;
+		padding: 0 10px;
+
+		font-size: 14px;
 	}
 
 	&.is-primary {
 		background-color: $c-primary-color;
+		color: $c-white-color;
 	}
 
 	&.is-success {
 		background-color: $c-success-color;
+		color: $c-white-color;
 	}
 
 	&.is-rounded {
@@ -568,12 +571,16 @@ img {
 .c-tooltip {
     position: relative;
     display: inline-flex;
+    overflow: visible;
 
     .c-tooltip-item {
         background-color: $c-primary-color;
-
+        
         white-space: nowrap;
         text-align: center;
+        overflow: visible;
+        
+        z-index: 9999;
 
         position: absolute;
         top: -40px;
@@ -584,8 +591,6 @@ img {
         height: auto;
         padding: 3px 10px;
 
-        z-index: 100;
-        
         &:after {
             content: '';
             position: absolute;

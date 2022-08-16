@@ -1,12 +1,16 @@
 .c-tooltip {
     position: relative;
     display: inline-flex;
+    overflow: visible;
 
     .c-tooltip-item {
         background-color: $c-primary-color;
-
+        
         white-space: nowrap;
         text-align: center;
+        overflow: visible;
+        
+        z-index: 9999;
 
         position: absolute;
         top: -40px;
@@ -17,8 +21,6 @@
         height: auto;
         padding: 3px 10px;
 
-        z-index: 100;
-        
         &:after {
             content: '';
             position: absolute;

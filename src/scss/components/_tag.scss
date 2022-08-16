@@ -1,35 +1,38 @@
 .c-tag {
-	display: flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-
-	max-width: 100px;
 
 	border: 1px solid $c-default-border-color;
 	border-radius: $c-border-radius;
 
-	font-size: 10px;
+	font-size: 13px;
 
 	height: 20px;
-	padding: 3px 8px;
+	padding: 0 8px;
 
 	&.small {
 		height: 15px;
-		padding: 3px 5px;
+		padding: 0 7px;
+
+		font-size: 11px;
 	}
 	
 	&.large {
-		height: 25px;
-		padding-left: 10px;
-		padding-right: 10px;
+		height: 23px;
+		padding: 0 10px;
+
+		font-size: 14px;
 	}
 
 	&.is-primary {
 		background-color: $c-primary-color;
+		color: $c-white-color;
 	}
 
 	&.is-success {
 		background-color: $c-success-color;
+		color: $c-white-color;
 	}
 
 	&.is-rounded {
