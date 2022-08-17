@@ -570,36 +570,63 @@ img {
 // tooltip scss start
 .c-tooltip {
     position: relative;
-    display: inline-flex;
-    overflow: visible;
+    display: inline-block;
+
+    .c-tooltip-arrow {
+        visibility: hidden;
+        position: absolute;
+        border: 9px solid transparent;
+        border-bottom-width: 0;
+        border-top-color: $c-primary-color;
+        top: -13px;
+        left: 50%;
+        transform: translateX(-50%);
+
+        &.is-left {
+            top: 50%;
+            left: unset;
+            right: -3px;
+            border-right-width: 0;
+            border-right-color: $c-primary-color;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &.is-right {
+            top: 50%;
+            left: 115%;
+            border-left-width: 0;
+            border-left-color: $c-primary-color;
+            transform: rotate(-45deg) translateY(-50%);
+        }
+
+        &.is-bottom {
+            top: calc(100% + 5px);
+            border-top-width: 0;
+            border-bottom-width: 10px;
+            border-bottom-color: $c-primary-color;
+        }
+    }
 
     .c-tooltip-item {
+        visibility: hidden;
         background-color: $c-primary-color;
         
         white-space: nowrap;
         text-align: center;
-        overflow: visible;
         
-        z-index: 9999;
-
         position: absolute;
-        top: -40px;
+        top: -35px;
         left: 50%;
         transform: translateX(-50%);
-
+        
         width: auto;
         height: auto;
         padding: 3px 10px;
 
-        &:after {
-            content: '';
-            position: absolute;
-            border: 9px solid transparent;
-            border-bottom-width: 0;
-            border-top-color: $c-primary-color;
-            top: 25px;
-            left: 50%;
-            transform: translateX(-50%);
+        z-index: 9999;
+
+        &.is-visible {
+            visibility: visible;
         }
 
         &.is-left {
@@ -607,39 +634,16 @@ img {
             transform: translateY(-50%);
             right: calc(100% + 10px);
             left: unset;
-            &:after {
-                top: 50%;
-                left: unset;
-                right: -3px;
-                border-right-width: 0;
-                border-right-color: $c-primary-color;
-                transform: translateY(-50%) rotate(45deg);
-            }
         }
 
         &.is-right {
             top: 50%;
             left: calc(100% + 10px);
             transform: translateY(-50%);
-            &:after {
-                top: 50%;
-                left: 0;
-                border-left-width: 0;
-                border-left-color: $c-primary-color;
-                transform: rotate(-45deg) translateY(-50%);
-            }
         }
 
         &.is-bottom {
-            top: inherit;
-            bottom: -40px;
-
-            &:after {
-                top: -5px;
-                border-top-width: 0;
-                border-bottom-width: 10px;
-                border-bottom-color: $c-primary-color;
-            }
+            top: calc(100% + 10px);
         }
 
         &.is-rounded {
