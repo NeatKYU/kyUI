@@ -26,7 +26,7 @@
             <c-dropdown :dropdownList="dropdownList"></c-dropdown>
 
             <!-- item custom 방식 -->
-            <c-dropdown>
+            <c-dropdown hovered>
                 <c-dropdown-item 
                     v-for="(item,index) in dropdownList" 
                     :key="item+'-'+index"
@@ -82,6 +82,9 @@
         <c-label>
             <h3>Tooltip</h3>
             <div>
+                <c-tooltip text="왼쪽 툴팁입니다!" isLeft rounded>
+                    <span>left</span>
+                </c-tooltip>
                 <c-tooltip text="아래 툴팁입니다!" isBottom rounded>
                     <span>bottom</span>
                 </c-tooltip>
@@ -93,6 +96,9 @@
                 </c-tooltip>
                 <c-tooltip text="오른쪽 툴팁입니다!" isRight rounded>
                     <c-button>right</c-button>
+                </c-tooltip>
+                <c-tooltip text="왼쪽 툴팁입니다!" isLeft rounded>
+                    <c-button>left</c-button>
                 </c-tooltip>
             </div>
         </c-label>
@@ -112,6 +118,7 @@
         </c-label>
 
         <h3>Table</h3>
+        <!-- dataTotalCount는 10개씩 뿌릴거면 api에서 넘겨줘야함 -->
         <c-table 
             :headerList="headerList" 
             :dataList="dataList" 
@@ -119,6 +126,7 @@
             :currentPage="this.currentPage" 
             :changePage="changePage"
             :perPage=5
+            :showPage=5
             isPagination
         />
 

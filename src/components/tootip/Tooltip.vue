@@ -82,7 +82,7 @@ export default {
                 // 왼쪽으로 나갔을 때
                 if(this.sLeft) {
                     this.sLeft = false;
-                    this.sBottom = true;
+                    this.sRight = true;
                 } else {
                     tooltipItem.style.left = `calc(50% + ${-rect.x + 5}px)`
                 }

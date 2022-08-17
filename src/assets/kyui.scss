@@ -581,11 +581,13 @@ img {
         top: -13px;
         left: 50%;
         transform: translateX(-50%);
+        
+        z-index: 99;
 
         &.is-left {
             top: 50%;
             left: unset;
-            right: -3px;
+            right: calc(100% + 8px);
             border-right-width: 0;
             border-right-color: $c-primary-color;
             transform: translateY(-50%) rotate(45deg);
@@ -593,7 +595,7 @@ img {
 
         &.is-right {
             top: 50%;
-            left: 115%;
+            left: calc(100% + 10px);
             border-left-width: 0;
             border-left-color: $c-primary-color;
             transform: rotate(-45deg) translateY(-50%);
