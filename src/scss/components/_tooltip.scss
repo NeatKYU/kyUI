@@ -4,6 +4,7 @@
 
     .c-tooltip-arrow {
         visibility: hidden;
+        opacity: 0;
         position: absolute;
         border: 9px solid transparent;
         border-bottom-width: 0;
@@ -13,6 +14,15 @@
         transform: translateX(-50%);
         
         z-index: 99;
+
+        &.is-visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &.is-animation {
+            transition: opacity .5s;
+        }
 
         &.is-left {
             top: 50%;
@@ -41,6 +51,7 @@
 
     .c-tooltip-item {
         visibility: hidden;
+        opacity: 0;
         background-color: $c-primary-color;
         
         white-space: nowrap;
@@ -55,10 +66,15 @@
         height: auto;
         padding: 3px 10px;
 
-        z-index: 9999;
+        z-index: 999;
 
         &.is-visible {
             visibility: visible;
+            opacity: 1;
+        }
+
+        &.is-animation {
+            transition: opacity .5s;
         }
 
         &.is-left {
@@ -80,11 +96,6 @@
 
         &.is-rounded {
             border-radius: $c-border-radius;
-        }
-
-
-        &.is-animation {
-            animation: fadeIn .5s ease-in-out;
         }
     }
 }
