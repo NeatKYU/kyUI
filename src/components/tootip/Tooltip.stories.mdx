@@ -10,6 +10,11 @@ import Tooltip from "./Tooltip";
 <Meta
   title="components/Tooltip"
   component={Tooltip}
+  decorators={[
+    () => ({
+      template: '<div style="padding: 5em 20em;"><story /></div>',
+    }),
+  ]}
   argTypes={{
     text: {
       description: "tooltip안에 들어갈 문구",
@@ -68,7 +73,13 @@ export const Template = (args, { argTypes }) => ({
 **tooltip** 컴포넌트
 
 <Canvas>
-  <Story name="default" height="200px">
+  <Story
+    name="default"
+    height="100px"
+    parameters={{
+      layout: "centered",
+    }}
+  >
     {Template.bind({})}
   </Story>
 </Canvas>
