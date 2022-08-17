@@ -81,16 +81,18 @@ export default {
             if(rect.x < 0) {
                 // 왼쪽으로 나갔을 때
                 if(this.sLeft) {
-                    this.sLeft = false;
                     this.sRight = true;
+                    this.sLeft = false;
+                    this.sBottom = false;
                 } else {
                     tooltipItem.style.left = `calc(50% + ${-rect.x + 5}px)`
                 }
             } else if(rect.right > window.innerWidth) {
                 // 오른쪽으로 나갔을 때
                 if(this.sRight) {
-                    this.sRight = false;
                     this.sLeft = true;
+                    this.sRight = false;
+                    this.sBottom = false;
                 } else {
                     const changeX = window.innerWidth - rect.right;
                     tooltipItem.style.left = `calc(50% + ${changeX - 10}px)`
