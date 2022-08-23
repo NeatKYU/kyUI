@@ -254,7 +254,7 @@ img {
     
     font-size: 16px;
 
-    padding: 5px 16px;
+    padding: 5px;
 }
 
 .c-textarea {
@@ -292,6 +292,12 @@ img {
     box-shadow: $c-box-shadow;
 
     background-color: $c-white-color;
+
+    .c-input-icon {
+        padding: 5px;
+        display: flex;
+        justify-content: center;
+    }
 
     &:hover {
         border-color: $c-hover-border-color;

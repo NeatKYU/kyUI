@@ -3,21 +3,23 @@
         class="input-wrapper"
         :class="[validateClasses, classes]"
     >
+        <c-icon v-if="leftIcon" :icon="leftIcon" class="c-input-icon"/>
         <input 
             v-if="type !== 'textarea'"
+            @input="updateInputValue"
             :placeholder="placeholder"
             :type="type"
-            @input="updateInputValue"
-            class="c-input"
             :disabled="this.disabled"
-        />
+            class="c-input"
+        >
+        <c-icon v-if="rightIcon" :icon="rightIcon" class="c-input-icon"/>
 
         <textarea
-            v-else
+            v-if="type === 'textarea'"
             @input="updateInputValue"
             :placeholder="placeholder"
-            class="c-textarea"
             :disabled="this.disabled"
+            class="c-textarea"
         ></textarea>
     </div>
 </template>
@@ -42,7 +44,15 @@ export default {
         disabled: {
             type: Boolean,
             default: false,
-        }
+        },
+        leftIcon: {
+            type: String,
+            default: null,
+        },
+        rightIcon: {
+            type: String,
+            default: null,
+        },
     },
     data() {
         return {
