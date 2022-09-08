@@ -20,6 +20,5 @@ addParameters({
 
 import '../src/plugins/GlobalComponent';
 import '../src/plugins/GlobalFont';
-import '../src/scss/_main.scss';
 import '../src/fontIcon/index';
 import './font.scss';

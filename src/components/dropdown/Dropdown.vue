@@ -87,3 +87,38 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+@import '../../scss/common';
+
+.c-dropdown-wrapper {
+    height: auto;
+    display: inline-flex;
+
+    position: relative;
+}
+.c-dropdown-item-divider {
+    width: 100%;
+    padding-top: 5px;
+
+    position: absolute;
+    top: 40px;
+    left: 3px;
+
+    z-index: 10;
+}
+
+.c-dropdown-item-wrapper {
+    min-width: 150px;
+    // height: 200px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+
+    background-color: $c-white-color;
+
+    box-shadow: $c-box-shadow;
+}
+</style>

@@ -53,3 +53,63 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+@import '../../scss/common';
+
+.c-switch {
+    width: 50px;
+    height: 30px;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    padding: 0 5px;
+
+    background-color: lightgray;
+
+    border-radius: $c-rounded-border-radius;
+
+    .c-switch-ball {
+        width: 20px;
+        height: 20px;
+        
+        background-color: white;
+    
+        border-radius: $c-rounded-border-radius;
+    }
+
+    &.is-small {
+        width: 40px;
+        height: 25px;
+
+        .c-switch-ball {
+            width: 15px;
+            height: 15px;
+        }
+    }
+
+    &.is-large {
+        width: 60px;
+        height: 35px;
+        
+        padding: 0 8px;
+
+        .c-switch-ball {
+            width: 23px;
+            height: 23px;
+        }
+    }
+}
+
+
+.on {
+    background-color: $c-success-color;
+}
+
+.off {
+    background-color: lightgray;
+}
+</style>

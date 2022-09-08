@@ -42,3 +42,17 @@ export default {
     }
 };
 </script>
+
+<style lang="scss" scoped>
+.c-radio-group {
+    display: flex;
+
+    &.is-row {
+        flex-direction: row;
+    }
+
+    &.is-column {
+        flex-direction: column;
+    }
+}
+</style>

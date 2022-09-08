@@ -108,5 +108,128 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../scss/common';
 
+.c-tooltip {
+    position: relative;
+    display: inline-block;
+
+    .c-tooltip-arrow {
+        visibility: hidden;
+        opacity: 0;
+        position: absolute;
+        border: 9px solid transparent;
+        border-bottom-width: 0;
+        border-top-color: $c-primary-color;
+        bottom: calc(100% + 5px);
+        left: 50%;
+        transform: translateX(-50%);
+        
+        z-index: 99;
+
+        &.is-visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &.is-animation {
+            transition: opacity .5s;
+        }
+
+        &.is-left {
+            top: 50%;
+            left: unset;
+            right: calc(100% + 8px);
+            border-right-width: 0;
+            border-right-color: $c-primary-color;
+            transform: translateY(-50%) rotate(45deg);
+        }
+
+        &.is-right {
+            top: 50%;
+            left: calc(100% + 10px);
+            border-left-width: 0;
+            border-left-color: $c-primary-color;
+            transform: rotate(-45deg) translateY(-50%);
+        }
+
+        &.is-bottom {
+            top: calc(100% + 5px);
+            border-top-width: 0;
+            border-bottom-width: 10px;
+            border-bottom-color: $c-primary-color;
+        }
+    }
+
+    .c-tooltip-item {
+        visibility: hidden;
+        opacity: 0;
+        background-color: $c-primary-color;
+        
+        white-space: nowrap;
+        text-align: center;
+        
+        position: absolute;
+        // top: -35px;
+        bottom: calc(100% + 10px);
+        left: 50%;
+        transform: translateX(-50%);
+        
+        width: auto;
+        height: auto;
+        padding: 3px 10px;
+
+        z-index: 999;
+
+        &.is-visible {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        &.is-animation {
+            transition: opacity .5s;
+        }
+
+        &.is-left {
+            top: 50%;
+            transform: translateY(-50%);
+            right: calc(100% + 10px);
+            left: unset;
+            bottom: unset;
+        }
+
+        &.is-right {
+            top: 50%;
+            left: calc(100% + 10px);
+            transform: translateY(-50%);
+            bottom: unset;
+        }
+
+        &.is-bottom {
+            top: calc(100% + 10px);
+            bottom: unset;
+        }
+
+        &.is-rounded {
+            border-radius: $c-border-radius;
+        }
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
 </style>
