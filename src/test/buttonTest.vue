@@ -130,6 +130,10 @@
             isPagination
         />
 
+        <h3>Modal</h3>
+        <c-button @click="openModal">open modal</c-button>
+        <c-modal :isOpen="isOpen" @eClose="closeModal"/>
+
         <div :style="{height: '200px'}"></div>
     </div>
 </template>
@@ -141,6 +145,7 @@ export default {
     data() {
         return {
             inputText: '',
+            isOpen: false,
             dropdownList: ['dropdown test','korea','USA'],
             imageList: [
                 'https://cdn.pixabay.com/photo/2022/07/12/07/06/lake-7316684_960_720.jpg',
@@ -207,6 +212,12 @@ export default {
         },
         changeValue(aOnOff){
             this.onoff = aOnOff;
+        },
+        openModal() {
+            this.isOpen = true;
+        },
+        closeModal() {
+            this.isOpen = false;
         }
     }
 }

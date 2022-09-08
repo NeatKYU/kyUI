@@ -11,6 +11,8 @@ import { CTooltip } from './components/tootip/index'
 import { CTag } from './components/tag/index'
 import { CSwitch } from './components/switch/index'
 import { CTable } from './components/table/index'
+import { CModal} from './components/modal/index'
+
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const components = [
@@ -30,6 +32,7 @@ const components = [
     CTag,
     CSwitch,
     CTable,
+    CModal,
 ]
 
 const kyui = {

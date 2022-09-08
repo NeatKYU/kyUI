@@ -792,3 +792,49 @@ img {
     }
 }
 // table scss end
+
+// modal scss start
+@import '../common';
+
+.c-modal-wrapper {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: rgba($color: black, $alpha: 0.3);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    z-index: 10;
+}
+
+.c-modal {
+    width: 20rem;
+    height: 20rem;
+    
+    // opacity: 1;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border-radius: $c-border-radius;
+    background-color: $c-white-color;
+
+    z-index: 99;
+    
+    .modal-title {
+        
+    }
+
+    .close-icon {
+        position: absolute;
+        top: .5rem;
+        right: 1rem;
+
+        cursor: pointer;
+    }
+}
+// modal scss end
