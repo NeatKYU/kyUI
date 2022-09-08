@@ -10,7 +10,6 @@ npm install vue-kyui
 ```
 import Vue from 'vue'
 import kyui from 'vue-kyui'
-import 'vue-kyui/dist/kyui.scss';
 
 Vue.use(kyui)
 ```
