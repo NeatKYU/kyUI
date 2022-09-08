@@ -1,4 +1,5 @@
-# KyUI
+# KyUI for Vue2.x
+ui 라이브러리를 만들어보고 싶어서 만드는 중입니다.
 
 ## Install
 ```
