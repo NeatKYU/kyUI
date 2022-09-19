@@ -5,7 +5,7 @@
         @click="outsideClickClose" 
         ref="modalWrapper"
     >
-        <div class="c-modal" :class="[classes]">
+        <div class="c-modal" :class="[commonClasses]">
             <div class="modal-header">
                 {{ titleText }}
                 <slot v-if="!titleText" name="header"/>
@@ -13,7 +13,7 @@
             <div class="modal-body">
                 <slot name="body"/>
             </div>
-            <div class="modal-footer">
+            <div class="modal-footer" :class="footerClasses">
                 <slot name="footer"/>
             </div>
             <div v-if="isCloseButton" class="close-icon" @click="buttonClose">
@@ -50,6 +50,10 @@ export default {
             type: Boolean,
             default: false,
         },
+        footerRight: {
+            type: Boolean,
+            default: false,
+        },
         size: {
             type: String,
             default: 'sm',
@@ -59,7 +63,7 @@ export default {
         },
     },
     computed: {
-        classes() {
+        commonClasses() {
             return {
                 'is-small': this.size === 'sm',
                 'is-medium': this.size === 'md',
@@ -68,6 +72,11 @@ export default {
                 'is-divider': this.isDivider,
             }
         },
+        footerClasses() {
+            return {
+                'is-footer-right': this.footerRight,
+            }
+        }
     },
     methods: {
         outsideClickClose(event) {
@@ -195,6 +204,10 @@ export default {
         display: flex;
         align-items: center;
         gap: 3px;
+
+        &.is-footer-right {
+            justify-content: end;
+        }
     }
 
     .close-icon {
