@@ -21,3 +21,6 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 *.sw?
+
+#버튼 테스트 안올라가게 수정
+buttonTest.vue
