@@ -132,7 +132,7 @@
 
         <h3>Modal</h3>
         <c-button @click="openModal">open modal</c-button>
-        <c-modal :isOpen="isOpen" @eClose="closeModal" size="lg">
+        <c-modal :isOpen="isOpen" @eClose="closeModal" size="md" isAnimation isDivider>
             <template v-slot:header>
                 <span>this is modal title</span>
             </template>
