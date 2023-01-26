@@ -1,6 +1,6 @@
 {
   "name": "vue-kyui",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "hompage": "https://github.com/NeatKYU/kyUI",
   "files": [
     "dist/*"
