@@ -14,7 +14,6 @@ import { CTag } from './components/tag/index'
 import { CSwitch } from './components/switch/index'
 import { CTable } from './components/table/index'
 import { CModal} from './components/modal/index'
-import { CSkeleton } from './components/skeleton/index'
 
 const components = [
     CButton,
@@ -34,7 +33,6 @@ const components = [
     CSwitch,
     CTable,
     CModal,
-    CSkeleton,
 ]
 
 const kyui = {

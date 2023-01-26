@@ -14,7 +14,6 @@ import { CTag } from '../components/tag/index'
 import { CSwitch } from '../components/switch/index'
 import { CTable } from '../components/table/index'
 import { CModal } from '../components/modal/index'
-import { CSkeleton } from '../components/skeleton/index'
 
 Vue.component(CButton.name, CButton)
 Vue.component(CIcon.name, CIcon)
@@ -33,7 +32,6 @@ Vue.component(CTag.name, CTag)
 Vue.component(CSwitch.name, CSwitch)
 Vue.component(CTable.name, CTable)
 Vue.component(CModal.name, CModal)
-Vue.component(CSkeleton.name, CSkeleton)
 
 export {
     CButton,
@@ -53,5 +51,4 @@ export {
     CSwitch,
     CTable,
     CModal,
-    CSkeleton,
 }

@@ -117,11 +117,6 @@
             <div>{{ onoff }}</div>
         </c-label>
 
-        <c-label>
-            <h3>Skeleton</h3>
-            <c-skeleton sWidth="20rem"/>
-        </c-label>
-
         <h3>Table</h3>
         <!-- dataTotalCount는 10개씩 뿌릴거면 api에서 넘겨줘야함 -->
         <c-table 
@@ -137,7 +132,7 @@
 
         <h3>Modal</h3>
         <c-button @click="openModal">open modal</c-button>
-        <c-modal :isOpen="isOpen" @eClose="closeModal" size="md" isAnimation isDivider footerRight>
+        <c-modal :isOpen="isOpen" @eClose="closeModal" size="md" isAnimation isDivider>
             <template v-slot:header>
                 <span>this is modal title</span>
             </template>
@@ -146,8 +141,6 @@
                 <c-button @click="closeModal">cancel</c-button>
             </template>
         </c-modal>
-
-        
 
         <div :style="{height: '200px'}"></div>
     </div>
