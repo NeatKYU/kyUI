@@ -1,3 +1,5 @@
+import { App } from 'vue';
+
 import { CButton } from './components/button/index'
 import { CIcon } from './components/icon/index'
 import { CInput } from './components/input/index'
@@ -13,8 +15,6 @@ import { CSwitch } from './components/switch/index'
 import { CTable } from './components/table/index'
 import { CModal} from './components/modal/index'
 import { CSkeleton } from './components/skeleton/index'
-
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 const components = [
     CButton,
@@ -38,12 +38,19 @@ const components = [
 ]
 
 const kyui = {
-    install(Vue) {
+    install(Vue: any) {
         components.map(component => {
             Vue.component(component.name, component)
         })
-        Vue.component('f-icon', FontAwesomeIcon)
     }
 };
+
+export const kyui3 = {
+    install(app: App) {
+        components.map(component => {
+            app.component(component.name, component)
+        })
+    }
+}
 
 export default kyui;
